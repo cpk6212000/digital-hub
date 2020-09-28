@@ -6,9 +6,11 @@ import { NavigationBar } from './components/NavigationBar';
 import { Home } from './Home';
 import { About } from './About';
 import { NoMatch } from './NoMatch';
+import FullHeight from "react-full-height";
 
 function App() {
   return (
+    <FullHeight>
     <React.Fragment>
       <Router>
         <NavigationBar />
@@ -20,6 +22,7 @@ function App() {
       </Router>
 
     </React.Fragment>
+    </FullHeight>
       );
 }
 
