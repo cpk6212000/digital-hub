@@ -13,9 +13,19 @@ import DropdownButton from 'react-bootstrap/DropdownButton'
 
 
 export default class P2BAcknowledgePage extends React.Component {
+  
+  styles = {
+    buttonStyle: {
+      backgroundColor: 'red', 
+      paddingLeft: 30, 
+      paddingRight: 30, 
+      borderRadius: 0 
+    }
+  }
+  
   render() {
     return (
-      <Container fluid>
+      <Container style={{ marginLeft: 20, marginRight: 20}}>
 
         <Row>
           <Col><h3>Thank you</h3></Col>
@@ -36,9 +46,9 @@ export default class P2BAcknowledgePage extends React.Component {
         <hr />
 
         <Row>
-          <Col><Button variant="danger" href="/p2bconfirm">Back</Button></Col>
-          <Col xs={6}><ProgressBar now={100} /></Col>
-          <Col><Button variant="danger" href="/p2blanding">Next</Button></Col>
+          <Col><Button style={this.styles.buttonStyle} variant="danger" href="/p2bconfirm">Back</Button></Col>
+          <Col xs={6} style={{ paddingTop: 10}}><ProgressBar now={100} /></Col>
+          <Col><Button style={this.styles.buttonStyle} variant="danger" href="/p2blanding">Next</Button></Col>
         </Row>
       </Container>
     );

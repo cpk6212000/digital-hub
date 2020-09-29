@@ -10,6 +10,16 @@ import Button from 'react-bootstrap/Button'
 import ProgressBar from 'react-bootstrap/ProgressBar'
 
 export default class P2BUploadDocPage extends React.Component {
+  
+  styles = {
+    buttonStyle: {
+      backgroundColor: 'red', 
+      paddingLeft: 30, 
+      paddingRight: 30, 
+      borderRadius: 0 
+    }
+  }
+
   render() {
     return (
       <Container style={{ marginLeft: 20, marginRight: 20}}>
@@ -103,9 +113,9 @@ export default class P2BUploadDocPage extends React.Component {
         <hr />
         
         <Row>
-          <Col><Button variant="danger" href="/p2blanding">Back</Button></Col>
-          <Col xs={6}><ProgressBar now={25} /></Col>
-          <Col><Button variant="danger" href="/p2binput">Next</Button></Col>
+          <Col><Button style={this.styles.buttonStyle} variant="danger" href="/p2blanding">Back</Button></Col>
+          <Col style={{ paddingTop: 10}} xs={6}><ProgressBar now={25} /></Col>
+          <Col><Button style={this.styles.buttonStyle} variant="danger" href="/p2binput">Next</Button></Col>
         </Row>
       </Container>
     );
