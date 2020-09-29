@@ -10,6 +10,7 @@ import P2BLandingPage  from './pages/P2BLandingPage';
 import P2BInputInfoPage from './pages/P2BInputInfoPage';
 import P2BConfirmPage from './pages/P2BConfirmPage';
 import P2BUploadDocPage from './pages/P2BUploadDocPage';
+import P2BAcknowledgePage from './pages/P2BAcknowledgePage';
 import FullHeight from "react-full-height";
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path="/p2binput" component={P2BInputInfoPage} />
           <Route path="/p2bconfirm" component={P2BConfirmPage} />
           <Route path="/p2bupload" component={P2BUploadDocPage} />
+          <Route path="/p2backnowledge" component={P2BAcknowledgePage} />
           <Route component={NoMatch} />
         </Switch>
       </Router>

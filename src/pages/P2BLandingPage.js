@@ -10,7 +10,7 @@ export default class P2BInputInfoPage extends React.Component {
       return (
         <Container fluid>
           <Row>
-            <Col><h2>P2B Crowd-lending</h2></Col>
+            <Col><h3>P2B Crowd-lending</h3></Col>
           </Row>
           <Row>
             <Col><p>Registration</p></Col>
@@ -20,7 +20,7 @@ export default class P2BInputInfoPage extends React.Component {
             <Col><p>Get Funded</p></Col>
           </Row>
           <Row>
-            <Col><ProgressBar now={20} /></Col>
+            <Col><ProgressBar now={0} /></Col>
           </Row>
 
           <br />
@@ -39,7 +39,7 @@ export default class P2BInputInfoPage extends React.Component {
                 <li>Other Mandatory Documents (i.e. Sole Prop. Declaration Or Certified Copy of Partnership Deed)</li>
               </ol>
             </Col>
-            <Col><Button variant="danger">Begin</Button></Col>
+            <Col><Button variant="danger" href="/p2bupload">Begin</Button></Col>
           </Row>
 
           <hr /> 
