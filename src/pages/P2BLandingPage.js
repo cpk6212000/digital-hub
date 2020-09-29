@@ -18,7 +18,7 @@ export default class P2BInputInfoPage extends React.Component {
   
     render() {
       return (
-        <Container fluid>
+        <Container style={{ marginLeft: 20, marginRight: 20}}>
           <Row className="pb-3">
             <Col><h3>P2B Crowd-lending</h3></Col>
           </Row>

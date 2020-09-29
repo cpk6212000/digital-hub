@@ -12,7 +12,7 @@ import ProgressBar from 'react-bootstrap/ProgressBar'
 export default class P2BUploadDocPage extends React.Component {
   render() {
     return (
-      <Container fluid>
+      <Container style={{ marginLeft: 20, marginRight: 20}}>
         <Row>
           <Col><h3>Business Profile</h3></Col>
         </Row>
@@ -24,27 +24,27 @@ export default class P2BUploadDocPage extends React.Component {
         </Row>
 
         <Row>
-            <Col>
-              <Nav.Link href="">Your PayMe for Business profile</Nav.Link>
+            <Col md={4}>
+              <Nav.Link href="" style={{ color: 'red'}}>Your PayMe for Business profile</Nav.Link>
             </Col>
-            <Col>
-              <Nav.Link href="">Your SF Express profile</Nav.Link>
+            <Col md={4}>
+              <Nav.Link href="" style={{ color: 'red'}}>Your SF Express profile</Nav.Link>
             </Col>
-            <Col>
-              <Nav.Link href="">Your WeChat for Business profile</Nav.Link>
+            <Col md={4}>
+              <Nav.Link href="" style={{ color: 'red'}}>Your WeChat for Business profile</Nav.Link>
             </Col>
         </Row>
 
         <hr />
 
         <Row>
-            <Col>
+            <Col md={6}>
                 <label htmlFor="basic-url">Applicant Full Name:</label>
                 <InputGroup className="mb-3">
                   <FormControl aria-describedby="basic-addon3" />
                 </InputGroup>
             </Col>
-            <Col>
+            <Col md={6}>
                 <label htmlFor="basic-url">Contact Email:</label>
                 <InputGroup className="mb-3">
                   <FormControl aria-describedby="basic-addon3" />
@@ -62,7 +62,7 @@ export default class P2BUploadDocPage extends React.Component {
         </Row>
 
         <Row>
-          <Col>
+          <Col md={3}>
             <Card>
               <Card.Body>
                 <Card.Title>Identity Proof</Card.Title>
@@ -71,7 +71,7 @@ export default class P2BUploadDocPage extends React.Component {
               </Card.Body>
             </Card>
           </Col>
-          <Col>
+          <Col md={3}>
             <Card>
               <Card.Body>
                 <Card.Title>Residence Proof</Card.Title>
@@ -80,7 +80,7 @@ export default class P2BUploadDocPage extends React.Component {
               </Card.Body>
             </Card>
           </Col>
-          <Col>
+          <Col md={3}>
             <Card>
               <Card.Body>
                 <Card.Title>Audited Statement</Card.Title>
@@ -89,7 +89,7 @@ export default class P2BUploadDocPage extends React.Component {
               </Card.Body>
             </Card>
           </Col>
-          <Col>
+          <Col md={3}>
             <Card>
               <Card.Body>
                 <Card.Title>Other Documents</Card.Title>
