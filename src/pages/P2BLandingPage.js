@@ -6,13 +6,23 @@ import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 
 export default class P2BInputInfoPage extends React.Component {
+    
+    styles = {
+      buttonStyle: {
+        backgroundColor: 'red', 
+        paddingLeft: 30, 
+        paddingRight: 30, 
+        borderRadius: 0 
+      }
+    }
+  
     render() {
       return (
         <Container fluid>
-          <Row>
+          <Row className="pb-3">
             <Col><h3>P2B Crowd-lending</h3></Col>
           </Row>
-          <Row>
+          <Row className="p-2">
             <Col><p>Registration</p></Col>
             <Col><p>Submission</p></Col>
             <Col><p>Review & Approval</p></Col>
@@ -26,10 +36,10 @@ export default class P2BInputInfoPage extends React.Component {
           <br />
 
           <Row>
-            <Col><h3>Create a new request in less than 10 mins!</h3></Col>
+            <Col><h4>Create a new request in less than 10 mins!</h4></Col>
           </Row>
           <Row>
-            <Col>
+            <Col sm={10}>
               <p>To Ensure a smooth application process, you may prepare the following documents in advance:</p>
               <ol>
                 <li>Proof of Identity</li>
@@ -39,20 +49,20 @@ export default class P2BInputInfoPage extends React.Component {
                 <li>Other Mandatory Documents (i.e. Sole Prop. Declaration Or Certified Copy of Partnership Deed)</li>
               </ol>
             </Col>
-            <Col><Button variant="danger" href="/p2bupload">Begin</Button></Col>
+            <Col sm={2}><Button style={this.styles.buttonStyle} variant="danger" href="/p2bupload">Begin</Button></Col>
           </Row>
 
           <hr /> 
-          <Row>
-            <Col><h3>OR</h3></Col>
+          <Row className="justify-content-md-center">
+            <Col md="auto"><h4>OR</h4></Col>
           </Row>
 
-          <Row>
-            <Col><Button variant="danger">Use Existing Profile</Button></Col>
+          <Row className="justify-content-md-center p-2">
+            <Col md="auto"><Button style={this.styles.buttonStyle} variant="danger">Use Existing Profile</Button></Col>
           </Row>
 
-          <Row>
-            <Col><small>The P2B Crowd-lending service is operated under Securities and Future Ordiance(‘SFO’) 103(2) by Securities and Futures Commission which allows small-scale retail crowdfunding not exceedding HKD 5 Milllions over a 12 months period in Hong Kong.</small></Col>
+          <Row className="justify-content-md-center p-2">
+            <Col md="auto" className="text-center text-secondary"><small>The P2B Crowd-lending service is operated under Securities and Future Ordiance(‘SFO’) 103(2) by Securities and Futures Commission which allows small-scale retail crowdfunding not exceedding HKD 5 Milllions over a 12 months period in Hong Kong.</small></Col>
           </Row>
         </Container>
       );
