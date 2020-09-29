@@ -51,7 +51,7 @@ export const NavigationBar = () => (
         <Nav>
           <Nav.Item><Nav.Link href="/">Home</Nav.Link></Nav.Item> 
           <Nav.Item><Nav.Link href="/about">Digital Loan</Nav.Link></Nav.Item>
-          <Nav.Item><Nav.Link href="/about">Crowd Lending</Nav.Link></Nav.Item>
+          <Nav.Item><Nav.Link href="/p2blanding">Crowd Lending</Nav.Link></Nav.Item>
           <Nav.Item><Nav.Link href="/about">Partnership</Nav.Link></Nav.Item>
         </Nav>
       </Navbar.Collapse>
