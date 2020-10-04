@@ -37,7 +37,7 @@ export default class P2BUploadDocPage extends React.Component {
 
         <Row>
           <Col md={4}>
-            <Nav.Link href="" style={{ color: 'red' }}>Your PayMe for Business profile</Nav.Link>
+            <Nav.Link href="https://login.xero.com/identity/connect/authorize?response_type=code&client_id=B70BBE3FF3704DA0BC5F3CCDCBEB7476&redirect_uri=https://hackademy-2020-290908.df.r.appspot.com/&scope=openid profile email accounting.transactions&state=123" style={{ color: 'red' }}>Your PayMe for Business profile</Nav.Link>
           </Col>
           <Col md={4}>
             <Nav.Link href="" style={{ color: 'red' }}>Your SF Express profile</Nav.Link>

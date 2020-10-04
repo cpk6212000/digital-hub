@@ -1,0 +1,1 @@
+https://login.xero.com/identity/connect/authorize?response_type=code&client_id=B70BBE3FF3704DA0BC5F3CCDCBEB7476&redirect_uri=/&scope=openid profile email accounting.transactions&state=123
