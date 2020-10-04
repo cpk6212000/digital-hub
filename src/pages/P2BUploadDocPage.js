@@ -10,6 +10,13 @@ import Button from 'react-bootstrap/Button'
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import ProgressStep from '@bit/nexxtway.react-rainbow.progress-step';
 import ProgressIndicator from '@bit/nexxtway.react-rainbow.progress-indicator';
+import paymeImg from '../asset/paymeImg.png'
+import SFImg from '../asset/SFImg.png'
+import wechatImg from '../asset/wechatImg.png'
+import tickImg from '../asset/tickImg.png'
+import Image from 'react-bootstrap/Image'
+import Form from 'react-bootstrap/Form'
+
 
 
 let windowObjectReference = null;
@@ -70,17 +77,23 @@ export default class P2BUploadDocPage extends React.Component {
   render() {
     return (
       <Container style={{ marginLeft: 20, marginRight: 20 }}>
-        <Row>
-          <Col><h3>Business Profile</h3></Col>
+        <Row className="">
+          <Col>
+            <h4>
+              Business Profile
+            </h4>
+          </Col>
         </Row>
 
-        <Row>
+        <div style={{ margin: 10, backgroundColor: 'white'}}>
+
+        <Row className="">
           <Col>
             <p>Skip some questions and file uploads, by connecting: (you can connect to more than 1 of them)</p>
           </Col>
         </Row>
 
-        <Row>
+        <Row className="">
           <Col md={4}>
             <Button onClick={() => openSignInWindow(url, 'Test')}>OAuth Test</Button>
           </Col>
@@ -89,72 +102,84 @@ export default class P2BUploadDocPage extends React.Component {
             <script src="https://edge.xero.com/platform/sso/xero-sso.js" async defer></script>
           </Col>
           <Col md={4}>
-            <Nav.Link href="" style={{ color: 'red' }}>Your WeChat for Business profile</Nav.Link>
+            <Image style={{ width: 60, height: 60, float: 'left'  }} src={wechatImg} rounded />
+            <Nav.Link className="pt-3" href="" style={{ color: 'red', textDecoration: 'underline' }}>Your WeChat for Business profile</Nav.Link>
           </Col>
         </Row>
+
+        </div>
+
 
         <hr />
 
         <Row>
           <Col md={6}>
-            <label htmlFor="basic-url">Applicant Full Name:</label>
+            <label htmlFor="basic-url"><h5>Applicant Full Name:</h5></label>
             <InputGroup className="mb-3">
-              <FormControl aria-describedby="basic-addon3" />
+              <FormControl aria-describedby="basic-addon3" value="Vicky Zhang" />
             </InputGroup>
           </Col>
           <Col md={6}>
-            <label htmlFor="basic-url">Contact Email:</label>
+            <label htmlFor="basic-url"><h5>Contact Email:</h5></label>
             <InputGroup className="mb-3">
-              <FormControl aria-describedby="basic-addon3" />
+              <FormControl aria-describedby="basic-addon3" value="vickyzhang@gmail.com" />
             </InputGroup>
           </Col>
         </Row>
 
         <Row>
           <Col>
-            <label htmlFor="basic-url">Registered Business Name:</label>
+            <label htmlFor="basic-url"><h5>Registered Business Name:</h5></label>
             <InputGroup className="mb-3">
-              <FormControl aria-describedby="basic-addon3" />
+              <FormControl aria-describedby="basic-addon3" value="Vicky Chinese Food (HK) Limited" />
             </InputGroup>
           </Col>
         </Row>
 
         <Row>
           <Col md={3}>
-            <Card>
-              <Card.Body>
-                <Card.Title>Identity Proof</Card.Title>
-                <Card.Text>HKID 2020.jpeg</Card.Text>
-                <Button variant="primary">Upload</Button>
-              </Card.Body>
-            </Card>
+            <label htmlFor="basic-url"><h5>Identity Proof</h5></label>
+            <Form className="mb-3">
+              <Form.File
+                id="custom-file"
+                label="HKID 2020.jpg"
+                data-browse="Upload"
+                custom
+              />
+            </Form>
           </Col>
           <Col md={3}>
-            <Card>
-              <Card.Body>
-                <Card.Title>Residence Proof</Card.Title>
-                <Card.Text>Address 2020.pdf</Card.Text>
-                <Button variant="primary">Upload</Button>
-              </Card.Body>
-            </Card>
+            <label htmlFor="basic-url"><h5>Residence Proof</h5></label>
+            <Form className="mb-3">
+              <Form.File
+                id="custom-file"
+                label="Address 2020.pdf"
+                data-browse="Upload"
+                custom
+              />
+            </Form>
           </Col>
           <Col md={3}>
-            <Card>
-              <Card.Body>
-                <Card.Title>Audited Statement</Card.Title>
-                <Card.Text>Statement 2020.pdf</Card.Text>
-                <Button variant="primary">Upload</Button>
-              </Card.Body>
-            </Card>
+            <label htmlFor="basic-url"><h5>Audited Statement</h5></label>
+            <Form className="mb-3">
+              <Form.File
+                id="custom-file"
+                label="Statement 2020.pdf"
+                data-browse="Upload"
+                custom
+              />
+            </Form>
           </Col>
           <Col md={3}>
-            <Card>
-              <Card.Body>
-                <Card.Title>Other Documents</Card.Title>
-                <Card.Text>Declaration 2020.pdf</Card.Text>
-                <Button variant="primary">Upload</Button>
-              </Card.Body>
-            </Card>
+            <label htmlFor="basic-url"><h5>Other Documents</h5></label>
+            <Form className="mb-3">
+              <Form.File
+                id="custom-file"
+                label="Declaration 2020.pdf"
+                data-browse="Upload"
+                custom
+              />
+            </Form>
           </Col>
         </Row>
 

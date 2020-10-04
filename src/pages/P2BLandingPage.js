@@ -1,9 +1,12 @@
 import React from 'react';
-import ProgressBar from 'react-bootstrap/ProgressBar'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
+import ProgressStep from '@bit/nexxtway.react-rainbow.progress-step';
+import ProgressIndicator from '@bit/nexxtway.react-rainbow.progress-indicator';
+import Image from 'react-bootstrap/Image'
+import progressBarImg from '../asset/progressbar.png'
 
 export default class P2BInputInfoPage extends React.Component {
     
@@ -20,23 +23,16 @@ export default class P2BInputInfoPage extends React.Component {
       return (
         <Container style={{ marginLeft: 20, marginRight: 20}}>
           <Row className="pb-3">
-            <Col><h3>P2B Crowd-lending</h3></Col>
+            <Col><h4>Peer-2-Business Crowd-lending</h4></Col>
           </Row>
-          <Row className="p-2">
-            <Col><p>Registration</p></Col>
-            <Col><p>Submission</p></Col>
-            <Col><p>Review & Approval</p></Col>
-            <Col><p>Publish</p></Col>
-            <Col><p>Get Funded</p></Col>
-          </Row>
-          <Row>
-            <Col><ProgressBar now={0} /></Col>
+          <Row className="">
+            <Image src={progressBarImg} fluid />
           </Row>
 
           <br />
 
           <Row>
-            <Col><h4>Create a new request in less than 10 mins!</h4></Col>
+            <Col className=""><h5>Create a new request in less than 10 mins!</h5></Col>
           </Row>
           <Row>
             <Col sm={10}>
@@ -54,11 +50,11 @@ export default class P2BInputInfoPage extends React.Component {
 
           <hr /> 
           <Row className="justify-content-md-center">
-            <Col md="auto"><h4>OR</h4></Col>
+            <Col md="auto"><h5>OR</h5></Col>
           </Row>
 
           <Row className="justify-content-md-center p-2">
-            <Col>
+            <Col md="auto">
               <Button style={this.styles.buttonStyle} variant="danger">Use Existing Profile</Button>
             </Col>
           </Row>
