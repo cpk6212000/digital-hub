@@ -3,9 +3,8 @@ import { Card, Button, Row, Container, Col, Image} from 'react-bootstrap'
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import dloan from './asset/dloan_icon.png'
-import crowlend from './asset/crowlend_icon.png';
-import strategic from './asset/strapart_icon.png';
-import bg from './asset/bg.png';
+import crowlend from './asset/crowlend_icon.png'
+import strategic from './asset/strapart_icon.png'
 
 const StyledCard = styled(Card)`
     margin: 1em 4em;
@@ -25,12 +24,9 @@ const StyledLink = styled(Link)`
     text-decoration: unset
   }
 `
-const Wrapper = styled(Container)`
-    background-image: url(${bg});
-`;
 
 export const Home = (props) => (
-    <Wrapper>
+    <Container>
         <Row>
             <Col>
                 <h1 style={{textAlign:'center'}}>Want to boost your business?</h1>
@@ -71,6 +67,6 @@ export const Home = (props) => (
         </StyledCard>
         </Row>
 
-    </Wrapper>
+    </Container>
 
 )
