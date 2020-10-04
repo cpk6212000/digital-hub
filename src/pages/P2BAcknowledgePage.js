@@ -10,6 +10,8 @@ import Button from 'react-bootstrap/Button'
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton'
+import ProgressStep from '@bit/nexxtway.react-rainbow.progress-step';
+import ProgressIndicator from '@bit/nexxtway.react-rainbow.progress-indicator';
 
 
 export default class P2BAcknowledgePage extends React.Component {
@@ -47,7 +49,15 @@ export default class P2BAcknowledgePage extends React.Component {
 
         <Row>
           <Col><Button style={this.styles.buttonStyle} variant="danger" href="/p2bconfirm">Back</Button></Col>
-          <Col xs={6} style={{ paddingTop: 10}}><ProgressBar now={100} /></Col>
+          <Col xs={6} style={{ paddingTop: 10}}>
+          <ProgressIndicator currentStepName='step-4'>
+              <ProgressStep name="step-1" />
+              <ProgressStep name="step-2" />
+              <ProgressStep name="step-3" />
+              <ProgressStep name="step-4" />
+            </ProgressIndicator>
+            <p style={{textAlign:"center"}}>Acknowledgement</p>
+          </Col>
           <Col><Button style={this.styles.buttonStyle} variant="danger" href="/p2blanding">Next</Button></Col>
         </Row>
       </Container>

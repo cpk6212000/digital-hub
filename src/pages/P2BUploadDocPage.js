@@ -8,21 +8,23 @@ import InputGroup from 'react-bootstrap/InputGroup'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
 import ProgressBar from 'react-bootstrap/ProgressBar'
+import ProgressStep from '@bit/nexxtway.react-rainbow.progress-step';
+import ProgressIndicator from '@bit/nexxtway.react-rainbow.progress-indicator';
 
 export default class P2BUploadDocPage extends React.Component {
-  
+
   styles = {
     buttonStyle: {
-      backgroundColor: 'red', 
-      paddingLeft: 30, 
-      paddingRight: 30, 
-      borderRadius: 0 
+      backgroundColor: 'red',
+      paddingLeft: 30,
+      paddingRight: 30,
+      borderRadius: 0
     }
   }
 
   render() {
     return (
-      <Container style={{ marginLeft: 20, marginRight: 20}}>
+      <Container style={{ marginLeft: 20, marginRight: 20 }}>
         <Row>
           <Col><h3>Business Profile</h3></Col>
         </Row>
@@ -34,41 +36,41 @@ export default class P2BUploadDocPage extends React.Component {
         </Row>
 
         <Row>
-            <Col md={4}>
-              <Nav.Link href="" style={{ color: 'red'}}>Your PayMe for Business profile</Nav.Link>
-            </Col>
-            <Col md={4}>
-              <Nav.Link href="" style={{ color: 'red'}}>Your SF Express profile</Nav.Link>
-            </Col>
-            <Col md={4}>
-              <Nav.Link href="" style={{ color: 'red'}}>Your WeChat for Business profile</Nav.Link>
-            </Col>
+          <Col md={4}>
+            <Nav.Link href="" style={{ color: 'red' }}>Your PayMe for Business profile</Nav.Link>
+          </Col>
+          <Col md={4}>
+            <Nav.Link href="" style={{ color: 'red' }}>Your SF Express profile</Nav.Link>
+          </Col>
+          <Col md={4}>
+            <Nav.Link href="" style={{ color: 'red' }}>Your WeChat for Business profile</Nav.Link>
+          </Col>
         </Row>
 
         <hr />
 
         <Row>
-            <Col md={6}>
-                <label htmlFor="basic-url">Applicant Full Name:</label>
-                <InputGroup className="mb-3">
-                  <FormControl aria-describedby="basic-addon3" />
-                </InputGroup>
-            </Col>
-            <Col md={6}>
-                <label htmlFor="basic-url">Contact Email:</label>
-                <InputGroup className="mb-3">
-                  <FormControl aria-describedby="basic-addon3" />
-                </InputGroup>
-            </Col>
+          <Col md={6}>
+            <label htmlFor="basic-url">Applicant Full Name:</label>
+            <InputGroup className="mb-3">
+              <FormControl aria-describedby="basic-addon3" />
+            </InputGroup>
+          </Col>
+          <Col md={6}>
+            <label htmlFor="basic-url">Contact Email:</label>
+            <InputGroup className="mb-3">
+              <FormControl aria-describedby="basic-addon3" />
+            </InputGroup>
+          </Col>
         </Row>
 
         <Row>
-            <Col>
-                <label htmlFor="basic-url">Registered Business Name:</label>
-                <InputGroup className="mb-3">
-                  <FormControl aria-describedby="basic-addon3" />
-                </InputGroup>
-            </Col>
+          <Col>
+            <label htmlFor="basic-url">Registered Business Name:</label>
+            <InputGroup className="mb-3">
+              <FormControl aria-describedby="basic-addon3" />
+            </InputGroup>
+          </Col>
         </Row>
 
         <Row>
@@ -111,10 +113,18 @@ export default class P2BUploadDocPage extends React.Component {
         </Row>
 
         <hr />
-        
+
         <Row>
           <Col><Button style={this.styles.buttonStyle} variant="danger" href="/p2blanding">Back</Button></Col>
-          <Col style={{ paddingTop: 10}} xs={6}><ProgressBar now={25} /></Col>
+          <Col style={{ paddingTop: 10 }} xs={6}>
+            <ProgressIndicator currentStepName='step-2' style={{borderColor: 'red'}}>
+              <ProgressStep name="step-1" style={{borderColor: 'red'}}/>
+              <ProgressStep name="step-2" />
+              <ProgressStep name="step-3" />
+              <ProgressStep name="step-4" />
+            </ProgressIndicator>
+            <p style={{textAlign:"center"}}>Request Detail</p>
+          </Col>
           <Col><Button style={this.styles.buttonStyle} variant="danger" href="/p2binput">Next</Button></Col>
         </Row>
       </Container>

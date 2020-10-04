@@ -1,10 +1,11 @@
 import React from 'react';
-import { Card, Button } from 'react-bootstrap'
+import { Card, Button, Row, Container, Col, Image} from 'react-bootstrap'
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import dloan from './asset/dloan_icon.png'
-import crowlend from './asset/crowlend_icon.png'
-import strategic from './asset/strapart_icon.png'
+import crowlend from './asset/crowlend_icon.png';
+import strategic from './asset/strapart_icon.png';
+import bg from './asset/bg.png';
 
 const StyledCard = styled(Card)`
     margin: 1em 4em;
@@ -17,41 +18,58 @@ const StyledCard = styled(Card)`
 const StyledCardBody = styled(Card.Body)`
     color: #000;
 `
-
-const Wrapper = styled.div`
-  display: flex;
-  height: 100% ;
-  margin-top: 1em;
-  margin-bottom: 2em;
-  margin-left: 6em;
-  margin-right: 6em;
-  align-items: stretch;
+const StyledLink = styled(Link)`
+    color: #000;
+    &:hover {
+    color: #000;
+    text-decoration: unset
+  }
+`
+const Wrapper = styled(Container)`
+    background-image: url(${bg});
 `;
+
 export const Home = (props) => (
     <Wrapper>
-        <StyledCard bg='#E8EBF7'>
-            <Link>
-                <StyledCardBody>
+        <Row>
+            <Col>
+                <h1 style={{textAlign:'center'}}>Want to boost your business?</h1>
+                <h1 style={{textAlign:'center'}}>&nbsp;	&nbsp;	&nbsp;	&nbsp;&nbsp;&nbsp;	&nbsp;	&nbsp;We are here to help you!</h1>
+            </Col>
+        </Row>
+        <Row className='align-items-stretch'>
+        <StyledCard className='shadow mb-3 rounded' bg='#E8EBF7'>
+            <StyledLink to='/survey1'>
+                <Card.Body>
                     <Card.Title>Get your financing</Card.Title>
                     <Card.Text>
                         Say bye-bye to the traditional approach and apply for financing within a few clicks!
                     </Card.Text>
-                </StyledCardBody>
-                <Card.Img variant="bottom" src={dloan} height='300'/>
-            </Link>
+                </Card.Body>
+                <Container>
+                <Row className='justify-content-center'>
+                    <Image src={dloan} />
+                </Row>
+                </Container>
+            </StyledLink>
         </StyledCard>
 
-        <StyledCard bg='#F2D398'>
-            <Link>
-                <StyledCardBody>
+        <StyledCard className='shadow mb-3 rounded' bg='#F2D398'>
+            <StyledLink>
+                <Card.Body>
                     <Card.Title>Strategic Partnership</Card.Title>
                     <Card.Text>
                         Find your partnerships in our Market Place right away!
                     </Card.Text>
-                </StyledCardBody>
-                <Card.Img variant="bottom" src={strategic} />
-            </Link>
+                </Card.Body>
+                <Container>
+                    <Row className='justify-content-center'>
+                        <Image src={strategic} />
+                    </Row>
+                </Container>
+            </StyledLink>
         </StyledCard>
+        </Row>
 
     </Wrapper>
 
