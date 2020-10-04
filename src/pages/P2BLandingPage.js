@@ -64,7 +64,7 @@ export default class P2BInputInfoPage extends React.Component {
           </Row>
 
           <Row className="justify-content-sm-center p-2">
-            <Col>className="text-center text-secondary"><small>The P2B Crowd-lending service is operated under Securities and Future Ordiance(‘SFO’) 103(2) by Securities and Futures Commission which allows small-scale retail crowdfunding not exceedding HKD 5 Milllions over a 12 months period in Hong Kong.</small></Col>
+            <Col className="text-center text-secondary"><small>The P2B Crowd-lending service is operated under Securities and Future Ordiance(‘SFO’) 103(2) by Securities and Futures Commission which allows small-scale retail crowdfunding not exceedding HKD 5 Milllions over a 12 months period in Hong Kong.</small></Col>
           </Row>
         </Container>
       );
