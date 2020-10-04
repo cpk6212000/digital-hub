@@ -12,6 +12,7 @@ import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import ProgressStep from '@bit/nexxtway.react-rainbow.progress-step';
 import ProgressIndicator from '@bit/nexxtway.react-rainbow.progress-indicator';
+import Form from 'react-bootstrap/Form'
 
 export default class P2BInputInfoPage extends React.Component {
     state = {
@@ -32,12 +33,8 @@ export default class P2BInputInfoPage extends React.Component {
         <Container style={{ marginLeft: 20, marginRight: 20}}>
 
           <Row>
-            <Col><h3>Business Profile</h3></Col>
-          </Row>
-
-          <Row>
               <Col md={6}>
-                  <label htmlFor="basic-url">Target Funding:</label>
+                  <label htmlFor="basic-url"><h5>Target Funding:</h5></label>
                   <InputGroup className="mb-3">
                     <DropdownButton
                       as={InputGroup.Prepend}
@@ -49,33 +46,80 @@ export default class P2BInputInfoPage extends React.Component {
                       <Dropdown.Item href="#">USD</Dropdown.Item>
                       <Dropdown.Item href="#">SGD</Dropdown.Item>
                     </DropdownButton>
-                    <FormControl aria-describedby="basic-addon1" />
+                    <FormControl aria-describedby="basic-addon1" value="3,000,000" />
                   </InputGroup>
               </Col>
               <Col md={6}>
-                  <label htmlFor="basic-url">Payback Period (Years):</label>
+                  <label htmlFor="basic-url"><h5>Payback Period (Years):</h5></label>
                   <InputGroup className="mb-3">
-                    <FormControl aria-describedby="basic-addon3" />
+                    <FormControl aria-describedby="basic-addon3" value="5"/>
                   </InputGroup>
               </Col>
           </Row>
 
           <Row>
-              <Col>
-                  <label htmlFor="basic-url">Purpose of Funding:</label>
+              <Col md={6}>
+                  <label htmlFor="basic-url"><h5>Purpose of Funding</h5></label>
                   <InputGroup className="mb-3">
-                    <FormControl aria-describedby="basic-addon3" />
+                    <FormControl aria-describedby="basic-addon3" as="textarea" rows={3}
+                      value="1. start up a business, eg pay for premises, new equipment and advertising
+                      2. run the business, eg having enough cash to pay staff wages and suppliers on time
+                      3. expand the business, eg having funds to pay for a new branch in a different city or country"
+                    />
+                  </InputGroup>
+              </Col>
+              <Col md={6}>
+                <label htmlFor="basic-url"><h5>Message to Investors</h5></label>
+                  <InputGroup className="mb-3">
+                    <FormControl aria-describedby="basic-addon3" as="textarea" rows={3}
+                      value="There are many sources to our success. We achieved growth by gaining market share in mature but relatively saturated markets and through strategic expansion in selected regions. In Germany, for example, we grew by 15% – the rest of the market by 4%. Not only is our German life insurance business continuing its success story; also, our Property-Casualty segment can grow its customer base after several years of stagnation."
+                    />
                   </InputGroup>
               </Col>
           </Row>
 
           <Row>
-              <Col>
-                  <label htmlFor="basic-url">Message to Investors:</label>
+              <Col md={6}>
+                  <label htmlFor="basic-url"><h5>Describe your team / start-up</h5></label>
                   <InputGroup className="mb-3">
-                    <FormControl aria-describedby="basic-addon3" />
+                    <FormControl aria-describedby="basic-addon3" as="textarea" rows={3}
+                      value=""
+                    />
                   </InputGroup>
               </Col>
+              <Col md={6}>
+                <label htmlFor="basic-url"><h5>Describe your product / service</h5></label>
+                  <InputGroup className="mb-3">
+                    <FormControl aria-describedby="basic-addon3" as="textarea" rows={3}
+                      value=""
+                    />
+                  </InputGroup>
+              </Col>
+          </Row>
+
+          <Row>
+            <Col md={6}>
+              <label htmlFor="basic-url"><h5>Upload a picture of your team / start-up</h5></label>
+              <Form className="mb-3">
+                <Form.File 
+                  id="custom-file"
+                  label="teampic.png"
+                  data-browse="Upload"
+                  custom
+                />
+              </Form>
+            </Col>
+            <Col md={6}>
+              <label htmlFor="basic-url"><h5>Upload picture(s) of your product / service</h5></label>
+              <Form className="mb-3">
+                <Form.File 
+                  id="custom-file"
+                  label="service.png"
+                  data-browse="Upload"
+                  custom
+                />
+              </Form>
+            </Col>
           </Row>
 
           <hr />
