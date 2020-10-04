@@ -15,6 +15,7 @@ import FullHeight from "react-full-height";
 import SurveryPage from './pages/SurveryPage';
 import SurveryPage2 from './pages/SurveryPage2';
 import Recommnadtion from './pages/Recommnadtion';
+import Callback from './pages/callback';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path="/p2bconfirm" component={P2BConfirmPage} />
           <Route path="/p2bupload" component={P2BUploadDocPage} />
           <Route path="/p2backnowledge" component={P2BAcknowledgePage} />
+          <Route path="/callback" component={Callback} />
           <Route component={NoMatch} />
         </Switch>
       </Router>
