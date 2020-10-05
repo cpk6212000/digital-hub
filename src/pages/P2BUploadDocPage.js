@@ -12,7 +12,7 @@ import ProgressStep from '@bit/nexxtway.react-rainbow.progress-step';
 import ProgressIndicator from '@bit/nexxtway.react-rainbow.progress-indicator';
 import paymeImg from '../asset/paymeImg.png'
 import SFImg from '../asset/SFImg.png'
-import wechatImg from '../asset/wechatImg.png'
+import xero from '../asset/xero.png'
 import tickImg from '../asset/tickImg.png'
 import Image from 'react-bootstrap/Image'
 import Form from 'react-bootstrap/Form'
@@ -25,8 +25,8 @@ let previousUrl = null;
 const receiveMessage = event => {
   // Do we trust the sender of this message? (might be
   // different from what we originally opened, for example).
-    window.location.pathname = '/p2bconfirm';
- };
+  window.location.pathname = '/p2bconfirm';
+};
 
 const openSignInWindow = (url, name) => {
   // remove any existing event listeners
@@ -85,27 +85,28 @@ export default class P2BUploadDocPage extends React.Component {
           </Col>
         </Row>
 
-        <div style={{ margin: 10, backgroundColor: 'white'}}>
+        <div style={{ margin: 10, backgroundColor: 'white' }}>
 
-        <Row className="">
-          <Col>
-            <p>Skip some questions and file uploads, by connecting: (you can connect to more than 1 of them)</p>
-          </Col>
-        </Row>
+          <Row className="">
+            <Col>
+              <p>Skip some questions and file uploads, by connecting: (you can connect to more than 1 of them)</p>
+            </Col>
+          </Row>
 
-        <Row className="">
-          <Col md={4}>
-            <Button onClick={() => openSignInWindow(url, 'Test')}>OAuth Test</Button>
-          </Col>
-          <Col md={4}>
-            <span data-xero-sso data-href="/sign-in/xero" data-label="Sign in with Xero"></span>
-            <script src="https://edge.xero.com/platform/sso/xero-sso.js" async defer></script>
-          </Col>
-          <Col md={4}>
-            <Image style={{ width: 60, height: 60, float: 'left'  }} src={wechatImg} rounded />
-            <Nav.Link className="pt-3" href="" style={{ color: 'red', textDecoration: 'underline' }}>Your WeChat for Business profile</Nav.Link>
-          </Col>
-        </Row>
+          <Row className="">
+            <Col md={4}>
+              <Image style={{ width: 60, height: 60, float: 'left' }} src={paymeImg} rounded />
+              <Nav.Link className="pt-3" href="" style={{ color: 'red', textDecoration: 'underline' }}>Your PayMe for Business profile</Nav.Link>
+            </Col>
+            <Col md={4}>
+              <Image style={{ width: 60, height: 60, float: 'left' }} src={SFImg} rounded />
+              <Nav.Link className="pt-3" href="" style={{ color: 'red', textDecoration: 'underline' }}>Your SF Express profile</Nav.Link>
+            </Col>
+            <Col md={4}>
+              <Image style={{ width: 60, height: 60, float: 'left' }} src={xero} rounded />
+              <Nav.Link className="pt-3" onClick={() => openSignInWindow(url, 'Login to Xero')} style={{ color: 'red', textDecoration: 'underline' }}>Your Xero for Business profile</Nav.Link>
+            </Col>
+          </Row>
 
         </div>
 
