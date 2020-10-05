@@ -59,10 +59,10 @@ export default class P2BConfirmPage extends React.Component {
             <Col md={6}>
                 <label htmlFor="basic-url"><h5>Attachments:</h5></label>
                 <ol>
-                  <li><Button variant="link">HKID 2020.jpg</Button></li>
-                  <li><Button variant="link">Address 2020.jpg</Button></li>
-                  <li><Button variant="link">Settlement 2020.jpg</Button></li>
-                  <li><Button variant="link">Declaration 2020.jpg</Button></li>
+                  <li><Button size="sm" variant="link">HKID 2020.jpg</Button></li>
+                  <li><Button size="sm" variant="link">Address 2020.jpg</Button></li>
+                  <li><Button size="sm" variant="link">Settlement 2020.jpg</Button></li>
+                  <li><Button size="sm" variant="link">Declaration 2020.jpg</Button></li>
                 </ol>
             </Col>
             <Col md={6}>

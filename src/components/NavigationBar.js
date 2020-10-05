@@ -34,6 +34,15 @@ const DropDown = ({children}) => (
 const StyledDropDown = styled(NavDropdown)`
 `;
 
+const testing = () => {
+  return (
+    <>
+    <Nav.Item><Nav.Link href="/about">Digital Loan</Nav.Link></Nav.Item>
+    <Nav.Item><Nav.Link href="/about">Partnership</Nav.Link></Nav.Item>
+    </>
+  )
+}
+
 export const NavigationBar = () => (
   <Styles>
     <Navbar expand="lg" className="shadow p-3 mb-5 bg-white rounded">
@@ -50,9 +59,9 @@ export const NavigationBar = () => (
       <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
         <Nav>
           <Nav.Item><Nav.Link href="/">Home</Nav.Link></Nav.Item> 
-          <Nav.Item><Nav.Link href="/about">Digital Loan</Nav.Link></Nav.Item>
+          <Nav.Item><Nav.Link href="/dashboard">Dashboard</Nav.Link></Nav.Item>
           <Nav.Item><Nav.Link href="/p2blanding">Crowd Lending</Nav.Link></Nav.Item>
-          <Nav.Item><Nav.Link href="/about">Partnership</Nav.Link></Nav.Item>
+          <Nav.Item><Nav.Link href="/visionGo">VisionGo</Nav.Link></Nav.Item>
         </Nav>
       </Navbar.Collapse>
      <DropDown className='ml-auto'>Vicky Zhang</DropDown>

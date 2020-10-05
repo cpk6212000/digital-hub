@@ -11,6 +11,8 @@ import P2BInputInfoPage from './pages/P2BInputInfoPage';
 import P2BConfirmPage from './pages/P2BConfirmPage';
 import P2BUploadDocPage from './pages/P2BUploadDocPage';
 import P2BAcknowledgePage from './pages/P2BAcknowledgePage';
+import VisionGoPage from './pages/VisionGoPage';
+import DashboardPage from './pages/DashboardPage';
 import FullHeight from "react-full-height";
 import SurveryPage from './pages/SurveryPage';
 import SurveryPage2 from './pages/SurveryPage2';
@@ -34,6 +36,8 @@ function App() {
           <Route path="/p2bconfirm" component={P2BConfirmPage} />
           <Route path="/p2bupload" component={P2BUploadDocPage} />
           <Route path="/p2backnowledge" component={P2BAcknowledgePage} />
+          <Route path="/visionGo" component={VisionGoPage} />
+          <Route path="/dashboard" component={DashboardPage} />
           <Route path="/callback" component={Callback} />
           <Route component={NoMatch} />
         </Switch>

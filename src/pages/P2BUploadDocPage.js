@@ -215,7 +215,7 @@ export default class P2BUploadDocPage extends React.Component {
             <Form className="mb-3">
               <Form.File
                 id="custom-file"
-                label="HKID 2020.jpg"
+                label=""
                 data-browse="Upload"
                 custom
               />
@@ -226,7 +226,7 @@ export default class P2BUploadDocPage extends React.Component {
             <Form className="mb-3">
               <Form.File
                 id="custom-file"
-                label="Address 2020.jpg"
+                label=""
                 data-browse="Upload"
                 custom
               />

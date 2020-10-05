@@ -81,7 +81,7 @@ Try out selected software solutions from our Market Place!</CenterText></Col>
         <hr />
 
         <Row>
-          <Col xs={2}><Button style={this.styles.buttonStyle} variant="danger" href="/p2bconfirm">Back</Button></Col>
+          <Col xs={2}><Button style={this.styles.buttonStyle} variant="danger" href="/">Home</Button></Col>
           <Col xs={6} style={{ paddingTop: 10}}>
           <ProgressIndicator currentStepName='step-4'>
               <ProgressStep name="step-1" />
@@ -91,7 +91,7 @@ Try out selected software solutions from our Market Place!</CenterText></Col>
             </ProgressIndicator>
             <p style={{textAlign:"center"}}>Acknowledgement</p>
           </Col>
-          <Col xs={2}><Button style={this.styles.buttonStyle} variant="danger" href="/" >Home</Button></Col>
+          <Col xs={2}><Button style={this.styles.buttonStyle} variant="danger" href="/dashboard" >Dashboard</Button></Col>
         </Row>
       </Container>
     );
