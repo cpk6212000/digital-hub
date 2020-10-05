@@ -61,7 +61,7 @@ const openSignInWindow = (url, name) => {
   previousUrl = url;
 }
 
-const url = 'https://login.xero.com/identity/connect/authorize?client_id=B70BBE3FF3704DA0BC5F3CCDCBEB7476&scope=openid%20profile%20email%20accounting.transactions%20accounting.settings%20offline_access&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fcallback';
+const url = 'https://login.xero.com/identity/connect/authorize?client_id=A974E29299064E2E9C19C0F0364BE595&scope=openid%20profile%20email%20accounting.transactions%20accounting.settings%20offline_access&response_type=code&redirect_uri=https%3A%2F%2Fhackademy-2020-290908.df.r.appspot.com%2Fcallback';
 
 export default class P2BUploadDocPage extends React.Component {
 
