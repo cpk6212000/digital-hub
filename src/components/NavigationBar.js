@@ -52,7 +52,7 @@ export const NavigationBar = () => (
           <Nav.Item><Nav.Link href="/">Home Page</Nav.Link></Nav.Item> 
           <Nav.Item><Nav.Link href="/">Digital Loan</Nav.Link></Nav.Item>
           <Nav.Item><Nav.Link href="/p2blanding">Crowd Lending</Nav.Link></Nav.Item>
-          <Nav.Item><Nav.Link href="/">Partnership</Nav.Link></Nav.Item>
+          <Nav.Item><Nav.Link href="/">Marketplace</Nav.Link></Nav.Item>
         </Nav>
       </Navbar.Collapse>
      <DropDown className='ml-auto'>Vicky Zhang</DropDown>
