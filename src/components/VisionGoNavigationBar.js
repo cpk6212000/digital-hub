@@ -34,7 +34,7 @@ const DropDown = ({children}) => (
 const StyledDropDown = styled(NavDropdown)`
 `;
 
-export const NavigationBar = () => (
+export const VisionGoNavigationBar = () => (
   <Styles>
     <Navbar expand="lg" className="shadow p-3 mb-5 bg-white rounded">
       <Navbar.Brand href="/">
@@ -44,15 +44,15 @@ export const NavigationBar = () => (
           height="30"
           className="d-inline-block align-text-top ml-"
         />{' '}
-        Digital Hub
+        HSBC
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav"/>
       <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
         <Nav>
-          <Nav.Item><Nav.Link href="/">Home Page</Nav.Link></Nav.Item> 
-          <Nav.Item><Nav.Link href="/">Digital Loan</Nav.Link></Nav.Item>
-          <Nav.Item><Nav.Link href="/p2blanding">Crowd Lending</Nav.Link></Nav.Item>
-          <Nav.Item><Nav.Link href="/">Partnership</Nav.Link></Nav.Item>
+          <Nav.Item><Nav.Link href="/">Discover</Nav.Link></Nav.Item> 
+          <Nav.Item><Nav.Link href="/">Events</Nav.Link></Nav.Item>
+          <Nav.Item><Nav.Link href="/">Follow</Nav.Link></Nav.Item>
+          <Nav.Item><Nav.Link href="/">Digital Hub</Nav.Link></Nav.Item>
         </Nav>
       </Navbar.Collapse>
      <DropDown className='ml-auto'>Vicky Zhang</DropDown>

@@ -17,6 +17,9 @@ import tickImg from '../asset/tickImg.png'
 import Image from 'react-bootstrap/Image'
 import Form from 'react-bootstrap/Form'
 import documentImg from '../asset/documentImg.png'
+import upload1Img from '../asset/upload1Img.png'
+import upload2Img from '../asset/upload2Img.png'
+import upload3Img from '../asset/upload3Img.png'
 
 
 
@@ -190,69 +193,27 @@ export default class P2BUploadDocPage extends React.Component {
         <Row>
           <Col xl={2} lg={4} md={6}>
             <label htmlFor="basic-url"><h6>Company Logo</h6></label>
-            <Form className="mb-3">
-              <Form.File
-                id="custom-file"
-                label=""
-                data-browse="Upload"
-                custom
-              />
-            </Form>
+            <Image style={{ width: '100%', height: 150,  }} src={upload1Img} thumbnail  />
           </Col>
           <Col xl={2} lg={4} md={6}>
             <label htmlFor="basic-url"><h6>Product Photos</h6></label>
-            <Form className="mb-3">
-              <Form.File
-                id="custom-file"
-                label=""
-                data-browse="Upload"
-                custom
-              />
-            </Form>
+            <Image style={{ width: '100%', height: 150, }} src={upload1Img}  thumbnail />
           </Col>
           <Col xl={2} lg={4} md={6}>
             <label htmlFor="basic-url"><h6>Identity Proof</h6></label>
-            <Form className="mb-3">
-              <Form.File
-                id="custom-file"
-                label=""
-                data-browse="Upload"
-                custom
-              />
-            </Form>
+            <Image style={{ width: '100%', height: 150,  }} src={upload2Img} thumbnail />
           </Col>
           <Col xl={2} lg={4} md={6}>
             <label htmlFor="basic-url"><h6>Residence Proof</h6></label>
-            <Form className="mb-3">
-              <Form.File
-                id="custom-file"
-                label=""
-                data-browse="Upload"
-                custom
-              />
-            </Form>
+            <Image style={{ width: '100%', height: 150, }} src={upload3Img} thumbnail />
           </Col>
           <Col xl={2} lg={4} md={6}>
             <label htmlFor="basic-url"><h6>Audited Statement</h6></label>
-            <Form className="mb-3">
-              <Form.File
-                id="custom-file"
-                label=""
-                data-browse="Upload"
-                custom
-              />
-            </Form>
+            <Image style={{ width: '100%', height: 150,  }} src={upload1Img} thumbnail />
           </Col>
           <Col xl={2} lg={4} md={6}>
             <label htmlFor="basic-url"><h6>Other Documents</h6></label>
-            <Form className="mb-3">
-              <Form.File
-                id="custom-file"
-                label=""
-                data-browse="Upload"
-                custom
-              />
-            </Form>
+            <Image style={{ width: '100%', height: 150, }} src={upload1Img} thumbnail />
           </Col>
         </Row>
 
@@ -261,8 +222,8 @@ export default class P2BUploadDocPage extends React.Component {
         <Row>
           <Col xs={2}><Button style={this.styles.buttonStyle} variant="danger" href="/p2blanding">Back</Button></Col>
           <Col style={{ paddingTop: 10 }} xs={6}>
-            <ProgressIndicator currentStepName='step-2' style={{ borderColor: 'red' }}>
-              <ProgressStep name="step-1" style={{ borderColor: 'red' }} />
+            <ProgressIndicator currentStepName='step-2' >
+              <ProgressStep name="step-1" />
               <ProgressStep name="step-2" />
               <ProgressStep name="step-3" />
               <ProgressStep name="step-4" />
