@@ -28,7 +28,6 @@ const DropDown = ({children}) => (
   <StyledDropDown title={children} id="basic-nav-dropdown">
     <NavDropdown.Item href="/business-profile">Business Profile</NavDropdown.Item>
     <NavDropdown.Item href="/dashboard">Dasboard</NavDropdown.Item>
-    <NavDropdown.Item href="/visionGo?website=visionGo">VisionGo</NavDropdown.Item>
   </StyledDropDown>
 );
 
