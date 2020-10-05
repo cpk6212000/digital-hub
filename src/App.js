@@ -14,8 +14,6 @@ import P2BAcknowledgePage from './pages/P2BAcknowledgePage';
 import VisionGoPage from './pages/VisionGoPage';
 import DashboardPage from './pages/DashboardPage';
 import FullHeight from "react-full-height";
-import SurveryPage from './pages/SurveryPage';
-import SurveryPage2 from './pages/SurveryPage2';
 import Recommnadtion from './pages/Recommnadtion';
 import Callback from './pages/callback';
 
@@ -28,8 +26,6 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
-          <Route path="/survey1" component={SurveryPage}></Route>
-          <Route path="/survey2" component={SurveryPage2}></Route>
           <Route path="/recommendation" component={Recommnadtion}></Route>
           <Route path="/p2blanding" component={P2BLandingPage} />
           <Route path="/p2binput" component={P2BInputInfoPage} />

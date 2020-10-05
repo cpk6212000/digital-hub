@@ -30,7 +30,7 @@ export default class P2BInputInfoPage extends React.Component {
 
     render() {
       return (
-        <Container style={{ marginLeft: 20, marginRight: 20}}>
+        <Container>
 
           <Row>
               <Col md={4}>
@@ -111,14 +111,13 @@ export default class P2BInputInfoPage extends React.Component {
 
           <Row>
             <Col xs={2}><Button style={this.styles.buttonStyle} variant="danger" href="/p2bupload">Back</Button></Col>
-            <Col style={{ paddingTop: 10}} xs={6}>
-            <ProgressIndicator currentStepName='step-2'>
+            <Col style={{ paddingTop: 10}} xs={8}>
+            <ProgressIndicator currentStepName='step-1'>
               <ProgressStep name="step-1" />
               <ProgressStep name="step-2" />
               <ProgressStep name="step-3" />
-              <ProgressStep name="step-4" />
             </ProgressIndicator>
-            <p style={{textAlign:"center"}}>Request Detail</p>
+            <p style={{textAlign:"center"}}>Registration</p>
             </Col>
             <Col xs={2}><Button style={this.styles.buttonStyle}  variant="danger" href="/p2bconfirm">Next</Button></Col>
           </Row>

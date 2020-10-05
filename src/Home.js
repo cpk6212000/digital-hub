@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import dloan from './asset/dloan_icon.png'
 import crowlend from './asset/crowlend_icon.png'
 import strategic from './asset/strapart_icon.png'
+import bg from './asset/bg.png'
 
 const StyledCard = styled(Card)`
     margin: 1em 4em;
@@ -24,6 +25,9 @@ const StyledLink = styled(Link)`
     text-decoration: unset
   }
 `
+const Wrapper = styled(Container)`
+    background-image: url(${bg});
+`
 
 export const Home = (props) => (
     <Container>
@@ -35,7 +39,7 @@ export const Home = (props) => (
         </Row>
         <Row className='align-items-stretch'>
         <StyledCard className='shadow mb-3 rounded' bg='#E8EBF7'>
-            <StyledLink to='/survey1'>
+            <StyledLink to='/recommendation'>
                 <Card.Body>
                     <Card.Title>Get your financing</Card.Title>
                     <Card.Text>

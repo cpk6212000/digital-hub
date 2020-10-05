@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Row, Col, Image, Card} from 'react-bootstrap';
+import { Container, Row, Col, Image, Card, Button} from 'react-bootstrap';
 import tips from '../asset/tips.png';
 import loan from '../asset/loan4M.png';
 import repay1 from '../asset/5yrs_repay.png';
@@ -57,10 +57,7 @@ function Recommnadtion() {
                 <Col md={1}>
                     <Image src={tips} responsive></Image>
                 </Col>
-                <Col><h2>Here is our Recommendations:</h2></Col>
-            </Row>
-            <Row className='mb-1'>
-                <Col><LeadText>We recommend you to apply:</LeadText></Col>
+                <Col><h2>Here is a list of available loan products:</h2></Col>
             </Row>
             <Row className='mb-3'>
                 <StyledLink to='/p2blanding'>
@@ -81,14 +78,15 @@ function Recommnadtion() {
                                     <ListItem>Operating and registered in HK</ListItem>
                                     <ListItem>Business Registration Certificate</ListItem>
                                     <ListItem>Not a listed company, lending institution</ListItem>
+                                    <Row>
+                                        <Button className='m-1' variant='secondary'>More Info</Button>
+                                        <Button className='m-1' variant='danger' href='/p2blanding'>Apply</Button>
+                                    </Row>
                                 </Col>
                             </Row>
                         </Card.Body>
                     </Card>
                 </StyledLink>
-            </Row>
-            <Row className='mb-1'>
-                <Col><LeadText>However, you may also be interested in:</LeadText></Col>
             </Row>
             <Row className='mb-3'>
                 <Card className='shadow mb-3 bg-white rounded flex-fill'>
@@ -109,6 +107,10 @@ function Recommnadtion() {
                                 <ListItem>Business Registration Certificate</ListItem>
                                 <ListItem>Not a listed company, lending institution</ListItem>
                                 <ListItem>With at least 30% decline in sales turnover since Feb 2020</ListItem>
+                                <Row>
+                                        <Button className='m-1' variant='secondary'>More Info</Button>
+                                        <Button className='m-1' variant='danger'>Apply</Button>
+                                </Row>
                             </Col>
                         </Row>
                     </Card.Body>

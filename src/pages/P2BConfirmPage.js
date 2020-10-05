@@ -27,7 +27,7 @@ export default class P2BConfirmPage extends React.Component {
   
   render() {
     return (
-      <Container style={{ marginLeft: 20, marginRight: 20}}>
+      <Container>
 
         <Row className="justify-content-sm-center">
           <Col className="text-center"><h2>Application Summary</h2></Col>
@@ -142,16 +142,15 @@ export default class P2BConfirmPage extends React.Component {
 
         <Row>
           <Col xs={2}><Button style={this.styles.buttonStyle} variant="danger" href="/p2binput">Back</Button></Col>
-          <Col style={{ paddingTop: 10}} xs={6}>
-          <ProgressIndicator currentStepName='step-3'>
+          <Col style={{ paddingTop: 10}} xs={8}>
+          <ProgressIndicator currentStepName='step-2'>
               <ProgressStep name="step-1" />
               <ProgressStep name="step-2" />
               <ProgressStep name="step-3" />
-              <ProgressStep name="step-4" />
             </ProgressIndicator>
-            <p style={{textAlign:"center"}}>Confirmation</p>
+            <p style={{textAlign:"center"}}>Summary</p>
           </Col>
-          <Col xs={2}><Button style={this.styles.buttonStyle} variant="danger" href="/p2backnowledge">Submit</Button></Col>
+          <Col xs={2}><Button className='ml-auto' style={this.styles.buttonStyle} variant="danger" href="/p2backnowledge">Submit</Button></Col>
         </Row>
       </Container>
     );

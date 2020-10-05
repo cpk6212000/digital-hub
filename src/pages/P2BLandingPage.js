@@ -12,6 +12,53 @@ import SFImg from '../asset/SFImg.png'
 import tickImg from '../asset/tickImg.png'
 import xero from '../asset/xero.png'
 
+let windowObjectReference = null;
+let previousUrl = null;
+
+const receiveMessage = event => {
+  // Do we trust the sender of this message? (might be
+  // different from what we originally opened, for example).
+  window.location = '/p2bupload?profile=Xero';
+};
+
+const openSignInWindow = (url, name) => {
+  // remove any existing event listeners
+  window.removeEventListener('message', receiveMessage);
+
+  // window features
+  const strWindowFeatures =
+    'toolbar=no, menubar=no, width=600, height=700, top=100, left=100';
+
+  if (windowObjectReference === null || windowObjectReference.closed) {
+    /* if the pointer to the window object in memory does not exist
+     or if such pointer exists but the window was closed */
+    windowObjectReference = window.open(url, name, strWindowFeatures);
+    windowObjectReference.focus();
+  } else if (previousUrl !== url) {
+    /* if the resource to load is different,
+     then we load it in the already opened secondary window and then
+     we bring such window back on top/in front of its parent window. */
+    windowObjectReference = window.open(url, name, strWindowFeatures);
+    windowObjectReference.focus();
+  } else {
+    /* else the window reference must exist and the window
+     is not closed; therefore, we can bring it back on top of any other
+     window with the focus() method. There would be no need to re-create
+     the window or to reload the referenced resource. */
+    windowObjectReference.focus();
+  }
+
+  // add the listener for receiving a message from the popup
+  window.addEventListener('message', event => receiveMessage(event), false);
+  // assign the previous URL
+  previousUrl = url;
+}
+// GCP App Engine link
+// const url = 'https://login.xero.com/identity/connect/authorize?client_id=B70BBE3FF3704DA0BC5F3CCDCBEB7476&scope=openid%20profile%20email%20accounting.transactions%20accounting.settings%20offline_access&response_type=code&redirect_uri=https%3A%2F%2Fhackademy-2020-290908.df.r.appspot.com%2Fcallback';
+
+// local redirect link
+const url = 'https://login.xero.com/identity/connect/authorize?client_id=B70BBE3FF3704DA0BC5F3CCDCBEB7476&scope=openid%20profile%20email%20accounting.transactions%20accounting.settings%20offline_access&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fcallback'
+
 export default class P2BInputInfoPage extends React.Component {
     
     styles = {
@@ -25,7 +72,7 @@ export default class P2BInputInfoPage extends React.Component {
   
     render() {
       return (
-        <Container style={{ marginLeft: 20, marginRight: 20}}>
+        <Container>
           <Row className="pb-3">
             <Col><h4>Peer-2-Business Crowd-lending</h4></Col>
           </Row>
@@ -73,7 +120,7 @@ export default class P2BInputInfoPage extends React.Component {
                 </Button>
             </Col>
             <Col md={3}>
-              <Button href="/p2bupload?profile=Xero" block style={{ fontSize: 11, padding: 2, paddingBottom: 0}} variant="outline-dark">
+              <Button onClick={()=> openSignInWindow(url, 'Login to Xero')} block style={{ fontSize: 11, padding: 2, paddingBottom: 0}} variant="outline-dark">
               <Image style={{ width: 40, height: 40, float: 'left', marginTop: 7 }} src={xero} rounded />
                 <p className="p-2">Begin with Xero Profile <br /> (auto-fill 12 fields)</p>
               </Button>

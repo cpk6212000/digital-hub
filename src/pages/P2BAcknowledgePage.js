@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Container, Image} from 'react-bootstrap'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -18,6 +18,7 @@ import partner1 from '../asset/partner1.png';
 import partner2 from '../asset/partner2.png';
 import partner3 from '../asset/partner3.png';
 import partner4 from '../asset/partner4.png';
+import SlidingPanel from 'react-sliding-side-panel';
 
 const CenterText = styled.p`
   text-align: center;
@@ -41,8 +42,19 @@ export default class P2BAcknowledgePage extends React.Component {
       borderRadius: 0 
     }
   }
-  
+
+  state = {
+    openPanel: false
+  }
+
+  componentDidMount(){
+    this.setState({
+      openPanel: true
+    })
+  }
+
   render() {
+    const openPanel = this.state.openPanel
     return (
       <Container>
         <Row className='justify-content-center'>
@@ -82,17 +94,25 @@ Try out selected software solutions from our Market Place!</CenterText></Col>
 
         <Row>
           <Col xs={2}><Button style={this.styles.buttonStyle} variant="danger" href="/">Home</Button></Col>
-          <Col xs={6} style={{ paddingTop: 10}}>
+          <Col xs={8} style={{ paddingTop: 10}}>
           <ProgressIndicator currentStepName='step-4'>
               <ProgressStep name="step-1" />
               <ProgressStep name="step-2" />
               <ProgressStep name="step-3" />
-              <ProgressStep name="step-4" />
             </ProgressIndicator>
             <p style={{textAlign:"center"}}>Acknowledgement</p>
           </Col>
           <Col xs={2}><Button style={this.styles.buttonStyle} variant="danger" href="/dashboard" >Dashboard</Button></Col>
         </Row>
+        <SlidingPanel
+        type={'bottom'}
+        isOpen={openPanel}
+        size={30}
+      >
+        <Container className='shadow mb-3 bg-white rounded' fluid>
+          <div>My Panel Content</div>
+        </Container>
+      </SlidingPanel>
       </Container>
     );
   }
