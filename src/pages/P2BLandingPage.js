@@ -7,6 +7,10 @@ import ProgressStep from '@bit/nexxtway.react-rainbow.progress-step';
 import ProgressIndicator from '@bit/nexxtway.react-rainbow.progress-indicator';
 import Image from 'react-bootstrap/Image'
 import progressBarImg from '../asset/progressbar.png'
+import paymeImg from '../asset/paymeImg.png'
+import SFImg from '../asset/SFImg.png'
+import tickImg from '../asset/tickImg.png'
+import xero from '../asset/xero.png'
 
 export default class P2BInputInfoPage extends React.Component {
     
@@ -25,17 +29,19 @@ export default class P2BInputInfoPage extends React.Component {
           <Row className="pb-3">
             <Col><h4>Peer-2-Business Crowd-lending</h4></Col>
           </Row>
-          <Row className="">
-            <Image src={progressBarImg} fluid />
+          <Row>
+            <Col md={10}>
+              <Image src={progressBarImg} fluid />
+            </Col>
           </Row>
 
           <br />
 
-          <Row>
+          <Row style={{ marginTop: 0}}>
             <Col className=""><h5>Create a new request in less than 10 mins!</h5></Col>
           </Row>
           <Row>
-            <Col sm={10}>
+            <Col style={{ }}>
               <p>To Ensure a smooth application process, you may prepare the following documents in advance:</p>
               <ol>
                 <li>Proof of Identity</li>
@@ -45,17 +51,32 @@ export default class P2BInputInfoPage extends React.Component {
                 <li>Other Mandatory Documents (i.e. Sole Prop. Declaration Or Certified Copy of Partnership Deed)</li>
               </ol>
             </Col>
-            <Col sm={2}><Button style={this.styles.buttonStyle} variant="danger" href="/p2bupload">Begin</Button></Col>
+          </Row>
+
+          <Row className="justify-content-md-center">
+            <Col md="auto"><Button block style={this.styles.buttonStyle} variant="danger" href="/p2bupload">Begin</Button></Col>
           </Row>
 
           <hr /> 
-          <Row className="justify-content-md-center">
-            <Col md="auto"><h5>OR</h5></Col>
-          </Row>
 
           <Row className="justify-content-md-center p-2">
-            <Col md="auto">
-              <Button style={this.styles.buttonStyle} variant="danger">Use Existing Profile</Button>
+            <Col md={3}>
+              <Button href="/p2bupload?profile=Payme" block style={{ fontSize: 11, padding: 2, paddingBottom: 0}} variant="outline-dark">
+                <Image style={{ width: 40, height: 40, float: 'left', marginTop: 7}} src={paymeImg} rounded />
+                <p className="p-2">Begin with PayMe Business Profile <br /> (auto-fill 8 fields)</p>
+                </Button>
+            </Col>
+            <Col md={3}>
+              <Button href="/p2bupload?profile=SF" block style={{ fontSize: 11, padding: 2, paddingBottom: 0 }} variant="outline-dark">
+              <Image style={{ width: 40, height: 40, float: 'left', marginTop: 7}} src={SFImg} rounded />
+                <p className="p-2">Begin with SF Express Profile <br /> (auto-fill 8 fields)</p>
+                </Button>
+            </Col>
+            <Col md={3}>
+              <Button href="/p2bupload?profile=Xero" block style={{ fontSize: 11, padding: 2, paddingBottom: 0}} variant="outline-dark">
+              <Image style={{ width: 40, height: 40, float: 'left', marginTop: 7 }} src={xero} rounded />
+                <p className="p-2">Begin with Xero Profile <br /> (auto-fill 12 fields)</p>
+              </Button>
             </Col>
           </Row>
 

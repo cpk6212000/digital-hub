@@ -16,6 +16,7 @@ import xero from '../asset/xero.png'
 import tickImg from '../asset/tickImg.png'
 import Image from 'react-bootstrap/Image'
 import Form from 'react-bootstrap/Form'
+import documentImg from '../asset/documentImg.png'
 
 
 
@@ -74,6 +75,32 @@ export default class P2BUploadDocPage extends React.Component {
     }
   }
 
+  state = {
+    connectToPayme: false,
+    connectToSF: false,
+    connectToXero: false
+  }
+
+  componentDidMount() {
+    const search = window.location.search;
+    const params = new URLSearchParams(search);
+    const profile = params.get('profile');
+
+    if(profile == 'Payme') {
+      this.setState({
+        connectToPayme: true
+      })
+    } else if (profile == 'SF') {
+      this.setState({
+        connectToSF: true
+      })
+    } else if (profile == 'Xero') {
+      this.setState({
+        connectToXero: true
+      })
+    }
+  }
+
   render() {
     return (
       <Container style={{ marginLeft: 20, marginRight: 20 }}>
@@ -96,15 +123,29 @@ export default class P2BUploadDocPage extends React.Component {
           <Row className="">
             <Col md={4}>
               <Image style={{ width: 60, height: 60, float: 'left' }} src={paymeImg} rounded />
-              <Nav.Link className="pt-3" href="" style={{ color: 'red', textDecoration: 'underline' }}>Your PayMe for Business profile</Nav.Link>
+              {
+                this.state.connectToPayme 
+                ? <p className="pt-3" style={{ color: 'green'}}>Connected!</p>
+                : <Nav.Link className="pt-3" href="" style={{ color: 'red', textDecoration: 'underline' }}>Your PayMe for Business profile</Nav.Link>
+              }
             </Col>
             <Col md={4}>
               <Image style={{ width: 60, height: 60, float: 'left' }} src={SFImg} rounded />
-              <Nav.Link className="pt-3" href="" style={{ color: 'red', textDecoration: 'underline' }}>Your SF Express profile</Nav.Link>
+              {
+                this.state.connectToSF
+                ? <p className="pt-3" style={{ color: 'green'}}>Connected!</p>
+                : <Nav.Link className="pt-3" href="" style={{ color: 'red', textDecoration: 'underline' }}>Your SF Express profile</Nav.Link>
+              }
+              
             </Col>
             <Col md={4}>
               <Image style={{ width: 60, height: 60, float: 'left' }} src={xero} rounded />
-              <Nav.Link className="pt-3" onClick={() => openSignInWindow(url, 'Login to Xero')} style={{ color: 'red', textDecoration: 'underline' }}>Your Xero for Business profile</Nav.Link>
+              {
+                this.state.connectToXero
+                ? <p className="pt-3" style={{ color: 'green'}}>Connected!</p>
+                : <Nav.Link className="pt-3" onClick={() => openSignInWindow(url, 'Login to Xero')} style={{ color: 'red', textDecoration: 'underline' }}>Your Xero for Business profile</Nav.Link>
+              }
+              
             </Col>
           </Row>
 
@@ -114,14 +155,23 @@ export default class P2BUploadDocPage extends React.Component {
         <hr />
 
         <Row>
+          <Col>
+            <p style={{ textAlign: 'right', color: 'lightgreen'}}> 
+              <span style={{ color: 'black'}}>Mandatory Fields</span>
+              : 10 / 20
+            </p>
+          </Col>
+        </Row>
+
+        <Row>
           <Col md={6}>
-            <label htmlFor="basic-url"><h5>Applicant Full Name:</h5></label>
+            <label htmlFor="basic-url"><h5>Applicant Full Name*:</h5></label>
             <InputGroup className="mb-3">
               <FormControl aria-describedby="basic-addon3" value="Vicky Zhang" />
             </InputGroup>
           </Col>
           <Col md={6}>
-            <label htmlFor="basic-url"><h5>Contact Email:</h5></label>
+            <label htmlFor="basic-url"><h5>Contact Email*:</h5></label>
             <InputGroup className="mb-3">
               <FormControl aria-describedby="basic-addon3" value="vickyzhang@gmail.com" />
             </InputGroup>
@@ -130,7 +180,7 @@ export default class P2BUploadDocPage extends React.Component {
 
         <Row>
           <Col>
-            <label htmlFor="basic-url"><h5>Registered Business Name:</h5></label>
+            <label htmlFor="basic-url"><h5>Registered Business Name*:</h5></label>
             <InputGroup className="mb-3">
               <FormControl aria-describedby="basic-addon3" value="Vicky Chinese Food (HK) Limited" />
             </InputGroup>
@@ -138,8 +188,30 @@ export default class P2BUploadDocPage extends React.Component {
         </Row>
 
         <Row>
-          <Col md={3}>
-            <label htmlFor="basic-url"><h5>Identity Proof</h5></label>
+          <Col xl={2} lg={4} md={6}>
+            <label htmlFor="basic-url"><h6>Company Logo</h6></label>
+            <Form className="mb-3">
+              <Form.File
+                id="custom-file"
+                label=""
+                data-browse="Upload"
+                custom
+              />
+            </Form>
+          </Col>
+          <Col xl={2} lg={4} md={6}>
+            <label htmlFor="basic-url"><h6>Product Photos</h6></label>
+            <Form className="mb-3">
+              <Form.File
+                id="custom-file"
+                label=""
+                data-browse="Upload"
+                custom
+              />
+            </Form>
+          </Col>
+          <Col xl={2} lg={4} md={6}>
+            <label htmlFor="basic-url"><h6>Identity Proof</h6></label>
             <Form className="mb-3">
               <Form.File
                 id="custom-file"
@@ -149,34 +221,34 @@ export default class P2BUploadDocPage extends React.Component {
               />
             </Form>
           </Col>
-          <Col md={3}>
-            <label htmlFor="basic-url"><h5>Residence Proof</h5></label>
+          <Col xl={2} lg={4} md={6}>
+            <label htmlFor="basic-url"><h6>Residence Proof</h6></label>
             <Form className="mb-3">
               <Form.File
                 id="custom-file"
-                label="Address 2020.pdf"
+                label="Address 2020.jpg"
                 data-browse="Upload"
                 custom
               />
             </Form>
           </Col>
-          <Col md={3}>
-            <label htmlFor="basic-url"><h5>Audited Statement</h5></label>
+          <Col xl={2} lg={4} md={6}>
+            <label htmlFor="basic-url"><h6>Audited Statement</h6></label>
             <Form className="mb-3">
               <Form.File
                 id="custom-file"
-                label="Statement 2020.pdf"
+                label=""
                 data-browse="Upload"
                 custom
               />
             </Form>
           </Col>
-          <Col md={3}>
-            <label htmlFor="basic-url"><h5>Other Documents</h5></label>
+          <Col xl={2} lg={4} md={6}>
+            <label htmlFor="basic-url"><h6>Other Documents</h6></label>
             <Form className="mb-3">
               <Form.File
                 id="custom-file"
-                label="Declaration 2020.pdf"
+                label=""
                 data-browse="Upload"
                 custom
               />
@@ -187,7 +259,7 @@ export default class P2BUploadDocPage extends React.Component {
         <hr />
 
         <Row>
-          <Col><Button style={this.styles.buttonStyle} variant="danger" href="/p2blanding">Back</Button></Col>
+          <Col xs={2}><Button style={this.styles.buttonStyle} variant="danger" href="/p2blanding">Back</Button></Col>
           <Col style={{ paddingTop: 10 }} xs={6}>
             <ProgressIndicator currentStepName='step-2' style={{ borderColor: 'red' }}>
               <ProgressStep name="step-1" style={{ borderColor: 'red' }} />
@@ -197,7 +269,7 @@ export default class P2BUploadDocPage extends React.Component {
             </ProgressIndicator>
             <p style={{ textAlign: "center" }}>Request Detail</p>
           </Col>
-          <Col><Button style={this.styles.buttonStyle} variant="danger" href="/p2binput">Next</Button></Col>
+          <Col xs={2}><Button style={this.styles.buttonStyle} variant="danger" href="/p2binput">Next</Button></Col>
         </Row>
       </Container>
     );

@@ -59,10 +59,10 @@ export default class P2BConfirmPage extends React.Component {
             <Col md={6}>
                 <label htmlFor="basic-url"><h5>Attachments:</h5></label>
                 <ol>
-                  <li>HKID 2020.jpg</li>
-                  <li>Address 2020.jpg</li>
-                  <li>Settlement 2020.jpg</li>
-                  <li>Declaration 2020.jpg</li>
+                  <li><Button variant="link">HKID 2020.jpg</Button></li>
+                  <li><Button variant="link">Address 2020.jpg</Button></li>
+                  <li><Button variant="link">Settlement 2020.jpg</Button></li>
+                  <li><Button variant="link">Declaration 2020.jpg</Button></li>
                 </ol>
             </Col>
             <Col md={6}>
@@ -84,7 +84,7 @@ export default class P2BConfirmPage extends React.Component {
         <Col md={6}>
             <label htmlFor="basic-url"><h5>Purpose of Funding</h5></label>
             <InputGroup className="mb-3">
-              <FormControl disabled aria-describedby="basic-addon3" as="textarea" rows={1}
+              <FormControl disabled aria-describedby="basic-addon3" as="textarea" rows={5}
                 value="1. start up a business, eg pay for premises, new equipment and advertising
                 2. run the business, eg having enough cash to pay staff wages and suppliers on time
                 3. expand the business, eg having funds to pay for a new branch in a different city or country"
@@ -95,7 +95,7 @@ export default class P2BConfirmPage extends React.Component {
         <Col md={6}>
            <label htmlFor="basic-url"><h5>Message to Investors</h5></label>
            <InputGroup className="mb-3">
-             <FormControl disabled aria-describedby="basic-addon3" as="textarea" rows={1}
+             <FormControl disabled aria-describedby="basic-addon3" as="textarea" rows={5}
                value="There are many sources to our success. We achieved growth by gaining market share in mature but relatively saturated markets and through strategic expansion in selected regions. In Germany, for example, we grew by 15% – the rest of the market by 4%. Not only is our German life insurance business continuing its success story; also, our Property-Casualty segment can grow its customer base after several years of stagnation."
              />
           </InputGroup>
@@ -107,7 +107,7 @@ export default class P2BConfirmPage extends React.Component {
               <Col md={6}>
                   <label htmlFor="basic-url"><h5>Describe your team / start-up</h5></label>
                   <InputGroup className="mb-3">
-                    <FormControl disabled aria-describedby="basic-addon3" as="textarea" rows={1}
+                    <FormControl disabled aria-describedby="basic-addon3" as="textarea" rows={5}
                       value=""
                     />
                   </InputGroup>
@@ -115,7 +115,7 @@ export default class P2BConfirmPage extends React.Component {
               <Col md={6}>
                 <label htmlFor="basic-url"><h5>Describe your product / service</h5></label>
                   <InputGroup className="mb-3">
-                    <FormControl disabled aria-describedby="basic-addon3" as="textarea" rows={1}
+                    <FormControl disabled aria-describedby="basic-addon3" as="textarea" rows={5}
                       value=""
                     />
                   </InputGroup>
@@ -141,7 +141,7 @@ export default class P2BConfirmPage extends React.Component {
         <hr />
 
         <Row>
-          <Col><Button style={this.styles.buttonStyle} variant="danger" href="/p2binput">Back</Button></Col>
+          <Col xs={2}><Button style={this.styles.buttonStyle} variant="danger" href="/p2binput">Back</Button></Col>
           <Col style={{ paddingTop: 10}} xs={6}>
           <ProgressIndicator currentStepName='step-3'>
               <ProgressStep name="step-1" />
@@ -151,7 +151,7 @@ export default class P2BConfirmPage extends React.Component {
             </ProgressIndicator>
             <p style={{textAlign:"center"}}>Confirmation</p>
           </Col>
-          <Col><Button style={this.styles.buttonStyle} variant="danger" href="/p2backnowledge">Submit</Button></Col>
+          <Col xs={2}><Button style={this.styles.buttonStyle} variant="danger" href="/p2backnowledge">Submit</Button></Col>
         </Row>
       </Container>
     );
