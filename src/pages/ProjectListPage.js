@@ -55,18 +55,19 @@ export default class ProjectListPage extends React.Component {
                                     <Col xl={5}>
                                         <Card.Img className="mt-3" variant="top" src={projectImg} />
                                         <ProgressBar label={"75%"} variant="success" className="mb-3 mt-3" now={75} />
-                                        <Button block style={{ fontSize: 12}} variant="danger" size="lg">
+                                        <Button href="/projectdetail" block style={{ fontSize: 12}} variant="danger" size="lg">
                                             <b>5 DAYS</b> <br/>
                                             (until offering closes)
                                         </Button>
+                                        <Button style={{ fontSize: 12}} block className="mt-3" variant="primary">Favourite</Button> 
                                     </Col>
                                     <Col xl={7}>
-                                        <Card.Title className="mt-3" style={{ color: 'red'}}>Rohit Chinese & Indian Food</Card.Title>
+                                        <Card.Title style={{ color: 'red'}}>Rohit Chinese & Indian Food</Card.Title>
                                         <Card.Text style={{ fontSize: 12}}>
                                             <b>Rohit Chinese & Indian food is a chain store all over Asia Pacific region including India, Thailand, 
     Taiwan, and Hong Kong. It not only provides gourmet food but also all kinds of drinks.</b>
                                         </Card.Text>
-                                        <Card.Text style={{ fontSize: 14}}>
+                                        <Card.Text style={{ fontSize: 13}}>
                                             Target Amount: 4 M
                                             <br />Amount Raised: <b style={{ color: 'green'}}>3 M</b>
                                             <br /># of Investors: 21
@@ -83,18 +84,19 @@ export default class ProjectListPage extends React.Component {
                                 <Row>
                                     <Col xl={5}>
                                         <Card.Img className="mt-3" variant="top" src={projectImg2} />
-                                        <ProgressBar label={"75%"} variant="warning" className="mb-3 mt-3" now={75} />
-                                        <Button block style={{ fontSize: 12}} variant="danger" size="lg">
+                                        <ProgressBar label={"50%"} variant="warning" className="mb-3 mt-3" now={50} />
+                                        <Button href="/projectdetail" block style={{ fontSize: 12}} variant="danger" size="lg">
                                             <b>8 DAYS</b> <br/>
                                             (until offering closes)
-                                        </Button>{" "}
+                                        </Button>
+                                        <Button style={{ fontSize: 12}} block className="mt-3" variant="primary">Favourite</Button> 
                                     </Col>
                                     <Col xl={7}>
-                                        <Card.Title className="mt-3" style={{ color: 'red'}}>Vicky Fast Food</Card.Title>
+                                        <Card.Title style={{ color: 'red'}}>Vicky Fast Food</Card.Title>
                                         <Card.Text style={{ fontSize: 12}}>
                                             <b>Vicky was previosly a Michelin chef. But with the inspiration of bringing delicious meal to the  community, she opened her fast food restaurant at Tai Kok Tsui in 2019. </b>
                                         </Card.Text>
-                                        <Card.Text style={{ fontSize: 14}}>
+                                        <Card.Text style={{ fontSize: 13}}>
                                             Target Amount: 2 M
                                             <br />Amount Raised: <b style={{ color: 'orange'}}>1 M</b>
                                             <br /># of Investors: 8
