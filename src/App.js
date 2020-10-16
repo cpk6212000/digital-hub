@@ -16,6 +16,7 @@ import VisionGoPage from './pages/VisionGoPage';
 import DashboardPage from './pages/DashboardPage';
 import FullHeight from "react-full-height";
 import Recommnadtion from './pages/Recommnadtion';
+import ProjectListPage from './pages/ProjectListPage';
 import Callback from './pages/callback';
 
 class App extends React.Component {
@@ -59,6 +60,7 @@ class App extends React.Component {
             <Route path="/p2backnowledge" component={P2BAcknowledgePage} />
             <Route path="/visionGo" component={VisionGoPage} />
             <Route path="/dashboard" component={DashboardPage} />
+            <Route path="/projectlist" component={ProjectListPage} />
             <Route path="/callback" component={Callback} />
             <Route component={NoMatch} />
           </Switch>
