@@ -12,12 +12,15 @@ import projectImg2 from '../asset/projectImg2.png'
 import projectImg3 from '../asset/projectImg3.png'
 import chatImg from '../asset/chatImg.png'
 import Button from 'react-bootstrap/Button'
+import { AiFillHeart } from 'react-icons/ai';
+
 
 export default class ProjectDetailPage extends React.Component {
 
     render() {
       return (
         <Container>
+
             <Row className="pb-3">
                 <Col><Button href="/projectlist" variant="dark">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Back&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Button></Col>
             </Row>
@@ -29,6 +32,9 @@ export default class ProjectDetailPage extends React.Component {
                             <Row>
                                 <Col lg={8}>
                                     <Card.Img className="mt-2" variant="top" src={projectImg} />
+                                </Col>
+                                <Col lg={4}>
+                                    <Button style={{ fontSize: 12}} block className="mt-3" variant="primary"><AiFillHeart />&nbsp;Favourite</Button> 
                                 </Col>
                             </Row>
                             <Row>
