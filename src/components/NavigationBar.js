@@ -28,6 +28,7 @@ const DropDown = ({children}) => (
   <StyledDropDown title={children} id="basic-nav-dropdown">
     <NavDropdown.Item href="/business-profile">Business Profile</NavDropdown.Item>
     <NavDropdown.Item href="/dashboard">Dasboard</NavDropdown.Item>
+    <NavDropdown.Item href="/projectlist">Crowd Lending Opportunities</NavDropdown.Item>
   </StyledDropDown>
 );
 
