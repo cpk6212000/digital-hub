@@ -55,11 +55,10 @@ export default class ProjectListPage extends React.Component {
                                     <Col xl={5}>
                                         <Card.Img className="mt-3" variant="top" src={projectImg} />
                                         <ProgressBar label={"75%"} variant="success" className="mb-3 mt-3" now={75} />
-                                        <Button href="/projectdetail" block style={{ fontSize: 12}} variant="danger" size="lg">
+                                        <Button className="m-2" href="/projectdetail" style={{ fontSize: 12}} variant="danger" size="lg">
                                             <b>5 DAYS</b> <br/>
                                             (until offering closes)
                                         </Button>
-                                        <Button style={{ fontSize: 12}} block className="mt-3" variant="primary">Favourite</Button> 
                                     </Col>
                                     <Col xl={7}>
                                         <Card.Title style={{ color: 'red'}}>Rohit Chinese & Indian Food</Card.Title>
@@ -78,18 +77,16 @@ export default class ProjectListPage extends React.Component {
                             </Card.Body>
                         </Card>
 
-
                         <Card>
                             <Card.Body>
                                 <Row>
                                     <Col xl={5}>
                                         <Card.Img className="mt-3" variant="top" src={projectImg2} />
                                         <ProgressBar label={"50%"} variant="warning" className="mb-3 mt-3" now={50} />
-                                        <Button href="/projectdetail" block style={{ fontSize: 12}} variant="danger" size="lg">
+                                        <Button className="m-2" href="/projectdetail" style={{ fontSize: 12}} variant="danger" size="lg">
                                             <b>8 DAYS</b> <br/>
                                             (until offering closes)
                                         </Button>
-                                        <Button style={{ fontSize: 12}} block className="mt-3" variant="primary">Favourite</Button> 
                                     </Col>
                                     <Col xl={7}>
                                         <Card.Title style={{ color: 'red'}}>Vicky Fast Food</Card.Title>

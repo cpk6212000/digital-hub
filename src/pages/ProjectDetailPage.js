@@ -30,9 +30,6 @@ export default class ProjectDetailPage extends React.Component {
                                 <Col lg={8}>
                                     <Card.Img className="mt-2" variant="top" src={projectImg} />
                                 </Col>
-                                <Col lg={4}>
-                                    <Button style={{ fontSize: 12}} block className="mt-3" variant="primary">Favourite</Button> 
-                                </Col>
                             </Row>
                             <Row>
                                 <Col style={{ fontSize: 12}}>
@@ -44,7 +41,7 @@ export default class ProjectDetailPage extends React.Component {
                         </Card.Body>
                     </Card>
 
-                    <Card style={{ padding: 10}}>
+                    <Card style={{ marginTop: 20, marginBottom: 30, padding: 10}}>
                         <Card.Body>
                             <Row>
                                 <Col lg={8}>
