@@ -60,77 +60,77 @@ const url = 'https://login.xero.com/identity/connect/authorize?client_id=B70BBE3
 // const url = 'https://login.xero.com/identity/connect/authorize?client_id=B70BBE3FF3704DA0BC5F3CCDCBEB7476&scope=openid%20profile%20email%20accounting.transactions%20accounting.settings%20offline_access&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fcallback'
 
 export default class P2BInputInfoPage extends React.Component {
-    
-    styles = {
-      buttonStyle: {
-        backgroundColor: 'red', 
-        paddingLeft: 30, 
-        paddingRight: 30, 
-        borderRadius: 0 
-      }
+
+  styles = {
+    buttonStyle: {
+      backgroundColor: 'red',
+      paddingLeft: 30,
+      paddingRight: 30,
+      borderRadius: 0
     }
-  
-    render() {
-      return (
-        <Container>
-          <Row className="pb-3">
-            <Col><h4>Peer-2-Business Crowd-lending</h4></Col>
-          </Row>
-          <Row>
-            <Col md={10}>
-              <Image src={progressBarImg} fluid />
-            </Col>
-          </Row>
+  }
 
-          <br />
+  render() {
+    return (
+      <Container>
+        <Row className="pb-3">
+          <Col><h4>Peer-2-Business Crowd-lending</h4></Col>
+        </Row>
+        <Row>
+          <Col md={10}>
+            <Image src={progressBarImg} fluid />
+          </Col>
+        </Row>
 
-          <Row style={{ marginTop: 0}}>
-            <Col className=""><h5>Create a new request in less than 10 mins!</h5></Col>
-          </Row>
-          <Row>
-            <Col style={{ }}>
-              <p>To Ensure a smooth application process, you may prepare the following documents in advance:</p>
-              <ol>
-                <li>Proof of Identity</li>
-                <li>Proof of Residence</li>
-                <li>Bank statement of the previous 6 months</li>
-                <li>Audited Financial Statements</li>
-                <li>Other Mandatory Documents (i.e. Sole Prop. Declaration Or Certified Copy of Partnership Deed)</li>
-              </ol>
-            </Col>
-          </Row>
+        <br />
 
-          <Row className="justify-content-md-center">
-            <Col md="auto"><Button block style={this.styles.buttonStyle} variant="danger" href="/p2bupload">Begin</Button></Col>
-          </Row>
+        <Row style={{ marginTop: 0 }}>
+          <Col className=""><h5>Create a new request in less than 10 mins!</h5></Col>
+        </Row>
+        <Row>
+          <Col style={{}}>
+            <p>To Ensure a smooth application process, you may prepare the following documents in advance:</p>
+            <ol>
+              <li>Proof of Identity</li>
+              <li>Proof of Residence</li>
+              <li>Bank statement of the previous 6 months</li>
+              <li>Audited Financial Statements</li>
+              <li>Other Mandatory Documents (i.e. Sole Prop. Declaration Or Certified Copy of Partnership Deed)</li>
+            </ol>
+          </Col>
+        </Row>
 
-          <hr /> 
+        <Row className="justify-content-md-center">
+          <Col md="auto"><Button block style={this.styles.buttonStyle} variant="danger" href="/p2bupload">Begin</Button></Col>
+        </Row>
 
-          <Row className="justify-content-md-center p-2">
-            <Col md={3}>
-              <Button href="/p2bupload?profile=Payme" block style={{ fontSize: 11, padding: 2, paddingBottom: 0}} variant="outline-dark">
-                <Image style={{ width: 40, height: 40, float: 'left', marginTop: 7}} src={paymeImg} rounded />
-                <p className="p-2">Begin with PayMe Business Profile <br /> (auto-fill 8 fields)</p>
-                </Button>
-            </Col>
-            <Col md={3}>
-              <Button href="/p2bupload?profile=SF" block style={{ fontSize: 11, padding: 2, paddingBottom: 0 }} variant="outline-dark">
-              <Image style={{ width: 40, height: 40, float: 'left', marginTop: 7}} src={SFImg} rounded />
-                <p className="p-2">Begin with SF Express Profile <br /> (auto-fill 8 fields)</p>
-                </Button>
-            </Col>
-            <Col md={3}>
-              <Button onClick={()=> openSignInWindow(url, 'Login to Xero')} block style={{ fontSize: 11, padding: 2, paddingBottom: 0}} variant="outline-dark">
+        <hr />
+
+        <Row className="justify-content-md-center p-2">
+          <Col md={3}>
+            <Button href="/p2bupload?profile=Payme" block style={{ fontSize: 11, padding: 2, paddingBottom: 0 }} variant="outline-dark">
+              <Image style={{ width: 40, height: 40, float: 'left', marginTop: 7 }} src={paymeImg} rounded />
+              <p className="p-2">Begin with PayMe Business Profile <br /> (auto-fill 8 fields)</p>
+            </Button>
+          </Col>
+          <Col md={3}>
+            <Button href="/p2bupload?profile=SF" block style={{ fontSize: 11, padding: 2, paddingBottom: 0 }} variant="outline-dark">
+              <Image style={{ width: 40, height: 40, float: 'left', marginTop: 7 }} src={SFImg} rounded />
+              <p className="p-2">Begin with SF Express Profile <br /> (auto-fill 8 fields)</p>
+            </Button>
+          </Col>
+          <Col md={3}>
+            <Button onClick={() => openSignInWindow(url, 'Login to Xero')} block style={{ fontSize: 11, padding: 2, paddingBottom: 0 }} variant="outline-dark">
               <Image style={{ width: 40, height: 40, float: 'left', marginTop: 7 }} src={xero} rounded />
-                <p className="p-2">Begin with Xero Profile <br /> (auto-fill 12 fields)</p>
-              </Button>
-            </Col>
-          </Row>
+              <p className="p-2">Begin with Xero Profile <br /> (auto-fill 12 fields)</p>
+            </Button>
+          </Col>
+        </Row>
 
-          <Row className="justify-content-sm-center p-2">
-            <Col className="text-center text-secondary"><small>The P2B Crowd-lending service is operated under Securities and Future Ordiance(‘SFO’) 103(2) by Securities and Futures Commission which allows small-scale retail crowdfunding not exceedding HKD 5 Milllions over a 12 months period in Hong Kong.</small></Col>
-          </Row>
-        </Container>
-      );
-    }
+        <Row className="justify-content-sm-center p-2">
+          <Col className="text-center text-secondary"><small>The P2B Crowd-lending service is operated under Securities and Future Ordiance(‘SFO’) 103(2) by Securities and Futures Commission which allows small-scale retail crowdfunding not exceedding HKD 5 Milllions over a 12 months period in Hong Kong.</small></Col>
+        </Row>
+      </Container>
+    );
+  }
 }

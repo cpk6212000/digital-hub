@@ -20,10 +20,22 @@ import documentImg from '../asset/documentImg.png'
 import upload1Img from '../asset/upload1Img.png'
 import upload2Img from '../asset/upload2Img.png'
 import upload3Img from '../asset/upload3Img.png'
+import ClipLoader from "react-spinners/ClipLoader";
+import tick from '../asset/tick.png';
 
 
 
 export default class P2BUploadDocPage extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      loading: true,
+      connectToPayme: false,
+      connectToSF: false,
+      connectToXero: false
+    };
+  }
 
   styles = {
     buttonStyle: {
@@ -34,18 +46,17 @@ export default class P2BUploadDocPage extends React.Component {
     }
   }
 
-  state = {
-    connectToPayme: false,
-    connectToSF: false,
-    connectToXero: false
-  }
+  timer = null 
+
+  center = { position: "fixed", top: "50%", left: "50%", transform: "translate(-50%, -50%)" };
+
 
   componentDidMount() {
     const search = window.location.search;
     const params = new URLSearchParams(search);
     const profile = params.get('profile');
 
-    if(profile == 'Payme') {
+    if (profile == 'Payme') {
       this.setState({
         connectToPayme: true
       })
@@ -58,9 +69,33 @@ export default class P2BUploadDocPage extends React.Component {
         connectToXero: true
       })
     }
+    this.timer = setTimeout(() =>
+      this.setState({
+        loading: false
+      }),
+      1500
+    )
   }
 
+  componentWillUnmount() {
+    clearTimeout(this.timer);
+  }
+
+
   render() {
+    if(this.state.loading){
+      return (
+        <div style={this.center}>
+            <ClipLoader
+              size={300}
+              color={"#D0021B"}
+              loading={this.state.loading}
+              style={{ margin: '0 auto'}}
+            />
+            <h5>Fetching relevant data from Xero</h5>
+        </div>
+      )
+    }
     return (
       <Container>
         <Row className="">
@@ -69,6 +104,11 @@ export default class P2BUploadDocPage extends React.Component {
               Business Profile
             </h4>
           </Col>
+          <Col><ClipLoader
+            size={150}
+            color={"#D0021B"}
+            loading={this.state.loading}
+          /></Col>
         </Row>
 
         <div style={{ margin: 10, backgroundColor: 'white' }}>
@@ -83,28 +123,28 @@ export default class P2BUploadDocPage extends React.Component {
             <Col md={4}>
               <Image style={{ width: 60, height: 60, float: 'left' }} src={paymeImg} rounded />
               {
-                this.state.connectToPayme 
-                ? <p className="pt-3" style={{ color: 'green'}}>Connected!</p>
-                : <Nav.Link className="pt-3" href="" style={{ color: 'red', textDecoration: 'underline' }}>Your PayMe for Business profile</Nav.Link>
+                this.state.connectToPayme
+                  ? <p className="pt-3" style={{ color: 'green' }}>Connected!</p>
+                  : <Nav.Link className="pt-3" href="" style={{ color: 'red', textDecoration: 'underline' }}>Your PayMe for Business profile</Nav.Link>
               }
             </Col>
             <Col md={4}>
               <Image style={{ width: 60, height: 60, float: 'left' }} src={SFImg} rounded />
               {
                 this.state.connectToSF
-                ? <p className="pt-3" style={{ color: 'green'}}>Connected!</p>
-                : <Nav.Link className="pt-3" href="" style={{ color: 'red', textDecoration: 'underline' }}>Your SF Express profile</Nav.Link>
+                  ? <p className="pt-3" style={{ color: 'green' }}>Connected!</p>
+                  : <Nav.Link className="pt-3" href="" style={{ color: 'red', textDecoration: 'underline' }}>Your SF Express profile</Nav.Link>
               }
-              
+
             </Col>
             <Col md={4}>
               <Image style={{ width: 60, height: 60, float: 'left' }} src={xero} rounded />
               {
                 this.state.connectToXero
-                ? <p className="pt-3" style={{ color: 'green'}}>Connected!</p>
-                : <Nav.Link className="pt-3" style={{ color: 'red', textDecoration: 'underline' }}>Your Xero for Business profile</Nav.Link>
+                  ? <p className="pt-3" style={{ color: 'green' }}>Connected!</p>
+                  : <Nav.Link className="pt-3" style={{ color: 'red', textDecoration: 'underline' }}>Your Xero for Business profile</Nav.Link>
               }
-              
+
             </Col>
           </Row>
 
@@ -115,8 +155,8 @@ export default class P2BUploadDocPage extends React.Component {
 
         <Row>
           <Col>
-            <p style={{ textAlign: 'right', color: 'lightgreen'}}> 
-              <span style={{ color: 'black'}}>Mandatory Fields</span>
+            <p style={{ textAlign: 'right', color: 'lightgreen' }}>
+              <span style={{ color: 'black' }}>Mandatory Fields</span>
               : 10 / 20
             </p>
           </Col>
@@ -139,7 +179,10 @@ export default class P2BUploadDocPage extends React.Component {
 
         <Row>
           <Col>
-            <label htmlFor="basic-url"><h5>Registered Business Name*:</h5></label>
+            <Row className='align-items-start'>
+              <label htmlFor="basic-url"><h5>Registered Business Name*:</h5></label>
+              <Image height='24' src={tick}/>
+            </Row>
             <InputGroup className="mb-3">
               <FormControl aria-describedby="basic-addon3" value="Vicky Chinese Food (HK) Limited" />
             </InputGroup>
@@ -149,15 +192,15 @@ export default class P2BUploadDocPage extends React.Component {
         <Row>
           <Col xl={2} lg={4} md={6}>
             <label htmlFor="basic-url"><h6>Company Logo</h6></label>
-            <Image style={{ width: '100%', height: 150,  }} src={upload1Img} thumbnail  />
+            <Image style={{ width: '100%', height: 150, }} src={upload1Img} thumbnail />
           </Col>
           <Col xl={2} lg={4} md={6}>
             <label htmlFor="basic-url"><h6>Product Photos</h6></label>
-            <Image style={{ width: '100%', height: 150, }} src={upload1Img}  thumbnail />
+            <Image style={{ width: '100%', height: 150, }} src={upload1Img} thumbnail />
           </Col>
           <Col xl={2} lg={4} md={6}>
             <label htmlFor="basic-url"><h6>Identity Proof</h6></label>
-            <Image style={{ width: '100%', height: 150,  }} src={upload2Img} thumbnail />
+            <Image style={{ width: '100%', height: 150, }} src={upload2Img} thumbnail />
           </Col>
           <Col xl={2} lg={4} md={6}>
             <label htmlFor="basic-url"><h6>Residence Proof</h6></label>
@@ -165,7 +208,7 @@ export default class P2BUploadDocPage extends React.Component {
           </Col>
           <Col xl={2} lg={4} md={6}>
             <label htmlFor="basic-url"><h6>Audited Statement</h6></label>
-            <Image style={{ width: '100%', height: 150,  }} src={upload1Img} thumbnail />
+            <Image style={{ width: '100%', height: 150, }} src={upload1Img} thumbnail />
           </Col>
           <Col xl={2} lg={4} md={6}>
             <label htmlFor="basic-url"><h6>Other Documents</h6></label>

@@ -13,17 +13,25 @@ import SFImg from '../asset/SFImg.png'
 import dashboardImg from '../asset/dashboardImg.png'
 import xero from '../asset/xero.png'
 
+const invisibleButton = {
+  height: '20px',
+  width: '100%'
+}
+
 export default class DasgboardPage extends React.Component {
 
 
     render() {
       return (
         <Container>
-            <Row>
-                <Col>
-                 <Image src={dashboardImg} fluid />
-                </Col>
-            </Row>
+            <Col>
+              <Row>
+                <div style={invisibleButton} onClick={() => {window.location='/projectlist'}}></div>
+              </Row>
+              <Row>
+                   <Image src={dashboardImg} fluid />
+              </Row>
+            </Col>
         </Container>
       );
     }
