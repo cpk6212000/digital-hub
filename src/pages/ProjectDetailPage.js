@@ -10,12 +10,30 @@ import ProgressBar from 'react-bootstrap/ProgressBar'
 import projectImg from '../asset/projectImg.png'
 import projectImg2 from '../asset/projectImg2.png'
 import projectImg3 from '../asset/projectImg3.png'
+import qrcodeImg from '../asset/qrcodeImg.png'
 import chatImg from '../asset/chatImg.png'
 import Button from 'react-bootstrap/Button'
+import Modal from 'react-bootstrap/Modal'
 import { AiFillHeart } from 'react-icons/ai';
-
+import Image from 'react-bootstrap/Image'
 
 export default class ProjectDetailPage extends React.Component {
+
+    state = {
+        showPayment: false
+    }
+
+    handleOpen() {
+        this.setState({
+            showPayment: true
+        })
+    }
+
+    handleClose() {
+        this.setState({
+            showPayment: false
+        })
+    }
 
     render() {
       return (
@@ -24,6 +42,39 @@ export default class ProjectDetailPage extends React.Component {
             <Row className="pb-3">
                 <Col><Button href="/projectlist" variant="dark">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Back&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Button></Col>
             </Row>
+
+            <Modal show={this.state.showPayment} onHide={() => this.setState({ showPayment: false})}>
+                <Modal.Header closeButton>
+                </Modal.Header>
+                <Modal.Body>
+                    Thanks for your support. Please choose the payment method: 
+                    <br /><br />
+                    <Button onClick={() => { this.setState({ showPayment: false, showQR: true})}}  block variant="outline-dark" size="lg" style={{ fontSize: 14}}>Bank Transfer</Button>
+                    <br />
+                    <Button onClick={() => { this.setState({ showPayment: false, showQR: true})}}  block variant="outline-dark" size="lg" style={{ fontSize: 14}}>FPS</Button>
+                    <br />
+                    <Button onClick={() => { this.setState({ showPayment: false, showQR: true})}}  block variant="outline-dark" size="lg" style={{ fontSize: 14}}>PayMe</Button>
+                </Modal.Body>
+            </Modal>
+
+            <Modal show={this.state.showQR} onHide={() => this.setState({ showQR: false})}>
+                <Modal.Header closeButton>
+                </Modal.Header>
+                <Modal.Body>
+                    Please use your FPS to scan the below QR code and enter the amount and maybe a warm message to the shop owner Rohit: 
+                    <br /><br />
+                    <div style={{ display: 'flex', justifyContent: 'center'}}>
+                        <Image md="auto" style={{ width: '50%', height: '50%' }} thumbnail src={qrcodeImg} />
+                    </div>
+
+                    <br /><br />
+
+                    <div style={{ display: 'flex', justifyContent: 'center'}}>
+                    <Button onClick={() => { this.setState({ showQR: false})}}  variant="danger" size="lg" style={{ fontSize: 14}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Finish&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Button>
+                    </div>
+
+                </Modal.Body>
+            </Modal>
 
             <Row>
                 <Col>
@@ -54,7 +105,7 @@ export default class ProjectDetailPage extends React.Component {
                                     <p style={{ fontSize: 14}} className="mt-3 mb-3"><b>Crowd Lending in Progress... 5 days left!</b></p>
                                 </Col>
                                 <Col lg={4}>
-                                    <Button style={{ fontSize: 12}} block className="mt-3" variant="danger">Invest</Button> 
+                                    <Button onClick={() => { this.setState({ showPayment: true})}} style={{ fontSize: 12}} block className="mt-3" variant="danger">Invest</Button> 
                                 </Col>
                             </Row>
                             
