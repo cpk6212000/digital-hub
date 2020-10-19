@@ -61,9 +61,10 @@ export default class P2BInputInfoPage extends React.Component {
               </Col>
               <Col md={4}>
                   <label htmlFor="basic-url"><h5>Est. Annual Interest Rate</h5></label>
-                  <InputGroup className="mb-3">
-                    <FormControl disabled aria-describedby="basic-addon3" value="6%"/>
+                  <InputGroup className="mb-0">
+                    <FormControl disabled aria-describedby="basic-addon3" value="6%" size='lg' style={{fontWeight: 'bold'}}/>
                   </InputGroup>
+                  <span style={{fontSize: 10, fontStyle: 'italic'}}>Calculated based on market rate and industry</span>
               </Col>
           </Row>
 
@@ -110,14 +111,15 @@ export default class P2BInputInfoPage extends React.Component {
           <hr />
 
           <Row>
-            <Col xs={2}><Button style={this.styles.buttonStyle} variant="danger" href="/p2bupload">Back</Button></Col>
+            <Col xs={2}><Button style={this.styles.buttonStyle} variant="danger" href="/p2bcompanyinfo">Back</Button></Col>
             <Col style={{ paddingTop: 10}} xs={8}>
-            <ProgressIndicator currentStepName='step-1'>
+            <ProgressIndicator currentStepName='step-3'>
               <ProgressStep name="step-1" />
               <ProgressStep name="step-2" />
               <ProgressStep name="step-3" />
+              <ProgressStep name="step-4" />
             </ProgressIndicator>
-            <p style={{textAlign:"center"}}>Registration</p>
+            <p style={{textAlign:"center"}}>Crowd-Lending Details</p>
             </Col>
             <Col xs={2}><Button style={this.styles.buttonStyle}  variant="danger" href="/p2bconfirm">Next</Button></Col>
           </Row>

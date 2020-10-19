@@ -22,6 +22,7 @@ import upload2Img from '../asset/upload2Img.png'
 import upload3Img from '../asset/upload3Img.png'
 import ClipLoader from "react-spinners/ClipLoader";
 import tick from '../asset/tick.png';
+import { Dropdown } from 'react-bootstrap';
 
 
 
@@ -46,7 +47,7 @@ export default class P2BUploadDocPage extends React.Component {
     }
   }
 
-  timer = null 
+  timer = null
 
   center = { position: "fixed", top: "50%", left: "50%", transform: "translate(-50%, -50%)" };
 
@@ -83,16 +84,16 @@ export default class P2BUploadDocPage extends React.Component {
 
 
   render() {
-    if(this.state.loading){
+    if (this.state.loading) {
       return (
         <div style={this.center}>
-            <ClipLoader
-              size={300}
-              color={"#D0021B"}
-              loading={this.state.loading}
-              style={{ margin: '0 auto'}}
-            />
-            <h5>Fetching relevant data from Xero</h5>
+          <ClipLoader
+            size={300}
+            color={"#D0021B"}
+            loading={this.state.loading}
+            style={{ margin: '0 auto' }}
+          />
+          <h5>Fetching relevant data from Xero</h5>
         </div>
       )
     }
@@ -178,10 +179,16 @@ export default class P2BUploadDocPage extends React.Component {
         </Row>
 
         <Row>
-          <Col>
-            <Row className='align-items-start'>
-              <label htmlFor="basic-url"><h5>Registered Business Name*:</h5></label>
-              <Image height='24' src={tick}/>
+          <Col md={6}>
+            <label htmlFor="basic-url"><h5>Phone Number*:</h5></label>
+            <InputGroup className="mb-3">
+              <FormControl aria-describedby="basic-addon3" value="5555 2222" />
+            </InputGroup>
+          </Col>
+          <Col md={6}>
+            <Row>
+            	<label htmlFor="basic-url"><h5>Registered Business Name*:</h5></label>
+              <Image height='24' src={tick} />
             </Row>
             <InputGroup className="mb-3">
               <FormControl aria-describedby="basic-addon3" value="Vicky Chinese Food (HK) Limited" />
@@ -190,14 +197,78 @@ export default class P2BUploadDocPage extends React.Component {
         </Row>
 
         <Row>
-          <Col xl={2} lg={4} md={6}>
-            <label htmlFor="basic-url"><h6>Company Logo</h6></label>
-            <Image style={{ width: '100%', height: 150, }} src={upload1Img} thumbnail />
+          <Col>
+            <Row className='align-items-start'>
+              <label htmlFor="basic-url"><h5>Office Address*:</h5></label>
+              <Image height='24' src={tick} />
+            </Row>
+            <InputGroup className="mb-3">
+              <FormControl aria-describedby="basic-addon3" value="1 Queen's Road Central, Central" />
+            </InputGroup>
           </Col>
-          <Col xl={2} lg={4} md={6}>
-            <label htmlFor="basic-url"><h6>Product Photos</h6></label>
-            <Image style={{ width: '100%', height: 150, }} src={upload1Img} thumbnail />
+        </Row>
+
+        <Row>
+          <Col md={6}>
+            <Row>
+              <label htmlFor="basic-url"><h5>Type of Business*:</h5></label>
+              <Image height='24' src={tick} />
+            </Row>
+            <InputGroup className="mb-3">
+            <Dropdown>
+                <Dropdown.Toggle variant="outline-secondary" id="dropdown-basic">
+                Sole Proprietorship</Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                  <Dropdown.Item href="#/action-1">Partnership</Dropdown.Item>
+                  <Dropdown.Item href="#/action-2">Limited Partnership</Dropdown.Item>
+                  <Dropdown.Item href="#/action-3">Corporation</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </InputGroup>
           </Col>
+          <Col md={6}>
+            <Row>
+              <label htmlFor="basic-url"><h5>Business Industry*:</h5></label>
+              <Image height='24' src={tick} />
+            </Row>
+            <InputGroup className="mb-3">
+            <Dropdown>
+                <Dropdown.Toggle variant="outline-secondary" id="dropdown-basic">
+                Hospitality Industry</Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                  <Dropdown.Item href="#/action-1">Business</Dropdown.Item>
+                  <Dropdown.Item href="#/action-2">Information Technology</Dropdown.Item>
+                  <Dropdown.Item href="#/action-3">Financial Instiution / Financial Service</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </InputGroup>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col md={6}>
+            <Row>
+              <label htmlFor="basic-url"><h5>Date of Business established*:</h5></label>
+              <Image height='24' src={tick} />
+            </Row>
+            <InputGroup className="mb-3">
+              <FormControl aria-describedby="basic-addon3" value="5555 2222" />
+            </InputGroup>
+          </Col>
+          <Col md={6}>
+            <Row>
+              <label htmlFor="basic-url"><h5>No. of employee*:</h5></label>
+              <Image height='24' src={tick} />
+            </Row>
+            <InputGroup className="mb-3">
+              <FormControl aria-describedby="basic-addon3" value="5" />
+            </InputGroup>
+          </Col>
+        </Row>
+
+        <Row className='justify-content-around'>
           <Col xl={2} lg={4} md={6}>
             <label htmlFor="basic-url"><h6>Identity Proof</h6></label>
             <Image style={{ width: '100%', height: 150, }} src={upload2Img} thumbnail />
@@ -205,10 +276,6 @@ export default class P2BUploadDocPage extends React.Component {
           <Col xl={2} lg={4} md={6}>
             <label htmlFor="basic-url"><h6>Residence Proof</h6></label>
             <Image style={{ width: '100%', height: 150, }} src={upload3Img} thumbnail />
-          </Col>
-          <Col xl={2} lg={4} md={6}>
-            <label htmlFor="basic-url"><h6>Audited Statement</h6></label>
-            <Image style={{ width: '100%', height: 150, }} src={upload1Img} thumbnail />
           </Col>
           <Col xl={2} lg={4} md={6}>
             <label htmlFor="basic-url"><h6>Other Documents</h6></label>
@@ -225,10 +292,11 @@ export default class P2BUploadDocPage extends React.Component {
               <ProgressStep name="step-1" />
               <ProgressStep name="step-2" />
               <ProgressStep name="step-3" />
+              <ProgressStep name="step-4" />
             </ProgressIndicator>
-            <p style={{ textAlign: "center" }}>Registration</p>
+            <p style={{ textAlign: "center" }}>Basic Info</p>
           </Col>
-          <Col xs={2}><Button style={this.styles.buttonStyle} variant="danger" href="/p2binput">Next</Button></Col>
+          <Col xs={2}><Button style={this.styles.buttonStyle} variant="danger" href="/p2bcompanyinfo">Next</Button></Col>
         </Row>
       </Container>
     );

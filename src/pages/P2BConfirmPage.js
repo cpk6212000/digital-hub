@@ -143,10 +143,11 @@ export default class P2BConfirmPage extends React.Component {
         <Row>
           <Col xs={2}><Button style={this.styles.buttonStyle} variant="danger" href="/p2binput">Back</Button></Col>
           <Col style={{ paddingTop: 10}} xs={8}>
-          <ProgressIndicator currentStepName='step-2'>
+          <ProgressIndicator currentStepName='step-4'>
               <ProgressStep name="step-1" />
               <ProgressStep name="step-2" />
               <ProgressStep name="step-3" />
+              <ProgressStep name="step-4" />
             </ProgressIndicator>
             <p style={{textAlign:"center"}}>Summary</p>
           </Col>

@@ -19,6 +19,7 @@ import Recommnadtion from './pages/Recommnadtion';
 import ProjectListPage from './pages/ProjectListPage';
 import ProjectDetailPage from './pages/ProjectDetailPage';
 import Callback from './pages/callback';
+import CompanyInfoPage from './pages/P2BCompanyInfoPage';
 
 class App extends React.Component {
   state = {
@@ -58,6 +59,7 @@ class App extends React.Component {
             <Route path="/p2binput" component={P2BInputInfoPage} />
             <Route path="/p2bconfirm" component={P2BConfirmPage} />
             <Route path="/p2bupload" component={P2BUploadDocPage} />
+            <Route path='/p2bcompanyinfo' component={CompanyInfoPage} />
             <Route path="/p2backnowledge" component={P2BAcknowledgePage} />
             <Route path="/visionGo" component={VisionGoPage} />
             <Route path="/dashboard" component={DashboardPage} />

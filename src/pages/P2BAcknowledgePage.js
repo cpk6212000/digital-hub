@@ -112,12 +112,6 @@ Try out selected software solutions from our Market Place!</CenterText></Col>
         <Row>
           <Col xs={2}><Button style={this.styles.buttonStyle} variant="danger" href="/">Home</Button></Col>
           <Col xs={8} style={{ paddingTop: 10 }}>
-            <ProgressIndicator currentStepName='step-4'>
-              <ProgressStep name="step-1" />
-              <ProgressStep name="step-2" />
-              <ProgressStep name="step-3" />
-            </ProgressIndicator>
-            <p style={{ textAlign: "center" }}>Acknowledgement</p>
           </Col>
           <Col xs={2}><Button style={this.styles.buttonStyle} variant="danger" href="/dashboard" >Dashboard</Button></Col>
         </Row>
